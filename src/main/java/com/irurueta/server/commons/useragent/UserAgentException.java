@@ -15,13 +15,13 @@
  */
 package com.irurueta.server.commons.useragent;
 
-import com.irurueta.server.commons.CommonsException;
+import com.irurueta.server.commons.ServerCommonsException;
 
 /**
  * Base class for this package. All exceptions in this package will inherit from
  * this one
  */
-public class UserAgentException extends CommonsException{
+public class UserAgentException extends ServerCommonsException{
     /**
      * Constructor
      */
