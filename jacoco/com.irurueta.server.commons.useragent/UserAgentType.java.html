@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>UserAgentType.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">com.irurueta:irurueta-server-commons-useragent</a> &gt; <a href="index.source.html" class="el_package">com.irurueta.server.commons.useragent</a> &gt; <span class="el_source">UserAgentType.java</span></div><h1>UserAgentType.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (C) 2016 Alberto Irurueta Carro (alberto@irurueta.com)
+ *
+ * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.irurueta.server.commons.useragent;
+
+/**
+ * This enum represents the type of a user agent. 
+ */
+<span class="pc" id="L21">public enum UserAgentType {</span>
+    /**
+     * A web browser, especially on a desktop, notebook or workstation.
+     */
+<span class="fc" id="L25">    BROWSER,</span>
+    
+    /**
+     * An email client, email reader.
+     */
+<span class="fc" id="L30">    EMAIL_CLIENT,</span>
+    
+    /**
+     * A news aggregator, also termed as feed aggregator, feed reader, news 
+     * reader or RSS reader.
+     */
+<span class="fc" id="L36">    FEED_READER,</span>
+    
+    /**
+     * A library is a collection of resources used to develop software.
+     */
+<span class="fc" id="L41">    LIBRARY,</span>
+    
+    /**
+     * Media player, also called multimedia player, is a term typically used to 
+     * describe computer software for playing back multimedia files.
+     */
+<span class="fc" id="L47">    MEDIAPLAYER,</span>
+    
+    /**
+     * A mobile browser, also called a microbrowser, minibrowser, or wireless
+     * internet browser (WIB), is a web browser designed for use on a mobile
+     * device.
+     */
+<span class="fc" id="L54">    MOBILE_BROWSER,</span>
+    
+    /**
+     * Offline browser which may download completely or partially a website to a
+     * hard drive.
+     */
+<span class="fc" id="L60">    OFFLINE_BROWSER,</span>
+    
+    /**
+     * Bots, such as Web crawlers.
+     */
+<span class="fc" id="L65">    ROBOT,</span>
+    
+    /**
+     * A software to hide the real user agent information.
+     */
+<span class="fc" id="L70">    USERAGENT_ANONYMIZER,</span>
+    
+    /**
+     * A software or service that validates parts of a website or webservice, 
+     * such as CSS, HTML, JSON, XML.
+     */
+<span class="fc" id="L76">    VALIDATOR,</span>
+    
+    /**
+     * A WAP browser is a web browser for mobile devices such as mobile phones 
+     * that use the Wireless Application Protocol (WAP).
+     */
+<span class="fc" id="L82">    WAP_BROWSER,</span>
+    
+    /**
+     * A software that doesn't match the other types.
+     */
+<span class="fc" id="L87">    OTHER,</span>
+    
+    /**
+     * An unknown user agent type.
+     */
+<span class="fc" id="L92">    UNKNOWN</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

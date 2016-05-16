@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>UserAgentConfigurationImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">com.irurueta:irurueta-server-commons-useragent</a> &gt; <a href="index.source.html" class="el_package">com.irurueta.server.commons.useragent</a> &gt; <span class="el_source">UserAgentConfigurationImpl.java</span></div><h1>UserAgentConfigurationImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (C) 2016 Alberto Irurueta Carro (alberto@irurueta.com)
+ *
+ * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.irurueta.server.commons.useragent;
+
+import com.irurueta.server.commons.configuration.ConfigurationException;
+import java.util.Properties;
+
+/**
+ * Class containing configuration for user agent detection services.
+ */
+public class UserAgentConfigurationImpl implements UserAgentConfiguration {
+
+    /**
+     * Indicates whether user agent detection is enabled or not.
+     */
+    private boolean mUserAgentDetectionEnabled;
+    
+    /**
+     * Amount of user agents that are cached.
+     * A cache of user agents is used to speed up the parsing process when
+     * user agents get repeated, which can happen if a user makes several
+     * requests to the server, or multiple users have the same user agent.
+     */
+    private int mUserAgentCacheSize;
+    
+    /**
+     * Maximum amount of time to keep user agents cached expressed in hours.
+     */
+    private int mUserAgentCacheExpirationTimeHours;
+    
+    /**
+     * Constructor.
+     */
+<span class="fc" id="L47">    public UserAgentConfigurationImpl() {</span>
+<span class="fc" id="L48">        mUserAgentDetectionEnabled = UserAgentConfigurationFactory.</span>
+                DEFAULT_USER_AGENT_DETECTION_ENABLED;
+<span class="fc" id="L50">        mUserAgentCacheSize = UserAgentConfigurationFactory.</span>
+                DEFAULT_USER_AGENT_CACHE_SIZE;
+<span class="fc" id="L52">        mUserAgentCacheExpirationTimeHours = UserAgentConfigurationFactory.</span>
+                DEFAULT_USER_AGENT_CACHE_EXPIRATION_TIME_HOURS;
+<span class="fc" id="L54">    }</span>
+    
+    /**
+     * Constructor from properties.
+     * @param properties properties containing configuration.
+     * @throws ConfigurationException if any property value is invalid.
+     */
+    public UserAgentConfigurationImpl(Properties properties) 
+<span class="fc" id="L62">            throws ConfigurationException {</span>
+<span class="fc" id="L63">        fromProperties(properties);</span>
+<span class="fc" id="L64">    }</span>
+            
+    /**
+     * Indicates whether user agent detection is enabled or not.
+     * @return true if user agent detection is enabled, false otherwise.
+     */    
+    @Override
+    public boolean isUserAgentDetectionEnabled() {
+<span class="fc" id="L72">        return mUserAgentDetectionEnabled;</span>
+    }
+    
+    /**
+     * Returns amount of user agents that are cached.
+     * A cache of user agents is used to speed up the parsing process when
+     * user agents get repeated, which can happen if a user makes several
+     * requests to the server, or multiple users have the same user agent.
+     * @return amount of user agents that are cached
+     */
+    @Override
+    public int getUserAgentCacheSize() {
+<span class="fc" id="L84">        return mUserAgentCacheSize;</span>
+    }
+    
+    /**
+     * Returns maximum amount of time to keep user agents cached expressed
+     * in hours.
+     * @return maximum amount of time to keep user agents cached expressed
+     * in hours.
+     */
+    @Override
+    public int getUserAgentCacheExpirationTimeHours() {
+<span class="fc" id="L95">        return mUserAgentCacheExpirationTimeHours;</span>
+    }
+    
+    /**
+     * Loads configuration from provided properties.
+     * @param properties properties containing configuration.
+     * @throws ConfigurationException if any properties value is invalid.
+     */
+    @Override
+    public final void fromProperties(Properties properties) 
+            throws ConfigurationException {
+        try{
+<span class="fc" id="L107">            mUserAgentDetectionEnabled = Boolean.valueOf(properties.getProperty(</span>
+                    UserAgentConfigurationFactory.
+                    USER_AGENT_DETECTION_ENABLED_PROPERTY, Boolean.toString(
+                    UserAgentConfigurationFactory.
+                    DEFAULT_USER_AGENT_DETECTION_ENABLED)));
+            
+<span class="fc" id="L113">            mUserAgentCacheSize = Integer.valueOf(properties.getProperty(</span>
+                    UserAgentConfigurationFactory.
+                    USER_AGENT_CACHE_SIZE_PROPERTY, Integer.toString(
+                    UserAgentConfigurationFactory.
+                    DEFAULT_USER_AGENT_CACHE_SIZE)));
+            
+<span class="fc bfc" id="L119" title="All 2 branches covered.">            if(mUserAgentCacheSize &lt;= 0){</span>
+<span class="fc" id="L120">                throw new ConfigurationException(</span>
+                        &quot;User agent cache size must be positive&quot;);
+            }
+            
+<span class="fc" id="L124">            mUserAgentCacheExpirationTimeHours = Integer.valueOf(properties.</span>
+                    getProperty(UserAgentConfigurationFactory.
+                    USER_AGENT_CACHE_EXPIRATION_TIME_HOURS_PROPERTY, Integer.
+                    toString(UserAgentConfigurationFactory.
+                    DEFAULT_USER_AGENT_CACHE_EXPIRATION_TIME_HOURS)));
+            
+<span class="fc bfc" id="L130" title="All 2 branches covered.">            if(mUserAgentCacheExpirationTimeHours &lt;= 0){</span>
+<span class="fc" id="L131">                throw new ConfigurationException(&quot;User agent cache &quot; + </span>
+                        &quot;expiration time must be positive&quot;);
+            }
+<span class="fc" id="L134">        }catch(ConfigurationException e){</span>
+<span class="fc" id="L135">            throw e;</span>
+<span class="fc" id="L136">        }catch(Throwable t){</span>
+<span class="fc" id="L137">            throw new ConfigurationException(t);</span>
+<span class="fc" id="L138">        }</span>
+<span class="fc" id="L139">    }</span>
+
+    /**
+     * Converts current configuration into properties.
+     * @return properties containing configuration.
+     */
+    @Override
+    public Properties toProperties() {
+<span class="fc" id="L147">        Properties properties = new Properties();</span>
+<span class="fc" id="L148">        properties.setProperty(UserAgentConfigurationFactory.</span>
+                USER_AGENT_DETECTION_ENABLED_PROPERTY, Boolean.toString(mUserAgentDetectionEnabled));
+<span class="fc" id="L150">        properties.setProperty(UserAgentConfigurationFactory.</span>
+                USER_AGENT_CACHE_SIZE_PROPERTY, Integer.toString(mUserAgentCacheSize));
+<span class="fc" id="L152">        properties.setProperty(UserAgentConfigurationFactory.</span>
+                USER_AGENT_CACHE_EXPIRATION_TIME_HOURS_PROPERTY, 
+                Integer.toString(mUserAgentCacheExpirationTimeHours));
+<span class="fc" id="L155">        return properties;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

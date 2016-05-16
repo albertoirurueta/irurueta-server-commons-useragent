@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>UserAgentData.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">com.irurueta:irurueta-server-commons-useragent</a> &gt; <a href="index.source.html" class="el_package">com.irurueta.server.commons.useragent</a> &gt; <span class="el_source">UserAgentData.java</span></div><h1>UserAgentData.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (C) 2016 Alberto Irurueta Carro (alberto@irurueta.com)
+ *
+ * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.irurueta.server.commons.useragent;
+
+/**
+ * Contains detected user agent data.
+ */
+public class UserAgentData {
+    
+    /**
+     * Original user agent string.
+     */
+    private String mUserAgent;
+    
+    /**
+     * Detected device category based on user agent string.
+     */
+    private DeviceCategory mDeviceCategory;
+    
+    /**
+     * Detected device category name based on user agent string.
+     */
+    private String mDeviceCategoryName;
+    
+    /**
+     * Detected user agent family based on user agent string.
+     */
+    private String mFamily;
+    
+    /**
+     * Detected operating system family based on user agent string.
+     */
+    private OperatingSystemFamily mOsFamily;
+    
+    /**
+     * Detected operating system family name based on user agent string.
+     */
+    private String mOsFamilyName;
+    
+    /**
+     * Detected operating system name based on user agent string.
+     */
+    private String mOsName;
+    
+    /**
+     * Detected operating system producer based on user agent string.
+     */
+    private String mOsProducer;
+    
+    /**
+     * Detected operating system version based on user agent string.
+     */
+    private String mOsVersion;
+    
+    /**
+     * Detected user agent type.
+     */
+    private UserAgentType mUserAgentType;
+    
+    /**
+     * Version of user agent (i.e. browser version, etc).
+     */
+    private String mUserAgentVersion;
+    
+    /**
+     * Constructor.
+     * @param userAgent Original user agent string.
+     * @param deviceCategory Detected device category based on user agent 
+     * string.
+     * @param deviceCategoryName Detected category name based on user agent 
+     * string.
+     * @param family Detected user agent family based on user agent string.
+     * @param osFamily Detected operating system family based on user agent 
+     * string.
+     * @param osFamilyName Detected operating system family name based on user 
+     * agent string.
+     * @param osName Detected operating system name based on user agent string.
+     * @param osProducer Detected operating system producer based on user agent 
+     * string.
+     * @param osVersion Detected operating system version based on user agent 
+     * string.
+     * @param userAgentType Detected user agent type.
+     * @param userAgentVersion version of user agent (i.e. browser version, 
+     * etc).
+     */
+    public UserAgentData(String userAgent, DeviceCategory deviceCategory,
+            String deviceCategoryName, String family, 
+            OperatingSystemFamily osFamily, String osFamilyName, String osName, 
+            String osProducer, String osVersion, UserAgentType userAgentType,
+<span class="fc" id="L103">            String userAgentVersion) {</span>
+<span class="fc" id="L104">        mUserAgent = userAgent;</span>
+<span class="fc" id="L105">        mDeviceCategory = deviceCategory;</span>
+<span class="fc" id="L106">        mDeviceCategoryName = deviceCategoryName;</span>
+<span class="fc" id="L107">        mFamily = family;</span>
+<span class="fc" id="L108">        mOsFamily = osFamily;</span>
+<span class="fc" id="L109">        mOsFamilyName = osFamilyName;</span>
+<span class="fc" id="L110">        mOsName = osName;</span>
+<span class="fc" id="L111">        mOsProducer = osProducer;</span>
+<span class="fc" id="L112">        mOsVersion = osVersion;</span>
+<span class="fc" id="L113">        mUserAgentType = userAgentType;</span>
+<span class="fc" id="L114">        mUserAgentVersion = userAgentVersion;</span>
+<span class="fc" id="L115">    }</span>
+    
+    /**
+     * Returns original user agent string.
+     * @return original user agent string.
+     */
+    public String getUserAgent() {
+<span class="fc" id="L122">        return mUserAgent;</span>
+    }
+
+    /**
+     * Sets original user agent string.
+     * @param userAgent original user agent string to be set.
+     */
+    protected void setUserAgent(String userAgent) {
+<span class="fc" id="L130">        this.mUserAgent = userAgent;</span>
+<span class="fc" id="L131">    }</span>
+    
+    /**
+     * Returns detected device category based on user agent string.
+     * @return detected device category.
+     */
+    public DeviceCategory getDeviceCategory() {
+<span class="fc" id="L138">        return mDeviceCategory;</span>
+    }
+
+    /**
+     * Sets detected device category based on user agent string.
+     * @param deviceCategory device category to be set.
+     */
+    protected void setDeviceCategory(DeviceCategory deviceCategory) {
+<span class="fc" id="L146">        this.mDeviceCategory = deviceCategory;</span>
+<span class="fc" id="L147">    }</span>
+    
+    /**
+     * Returns detected device category name based on user agent string.
+     * @return detected device category name based on user agent string.
+     */
+    public String getDeviceCategoryName() {
+<span class="fc" id="L154">        return mDeviceCategoryName;</span>
+    }
+    
+    /**
+     * Sets detected device category name based on user agent string.
+     * @param deviceCategoryName device category name to be set.
+     */
+    protected void setDeviceCategoryName(String deviceCategoryName) {
+<span class="fc" id="L162">        this.mDeviceCategoryName = deviceCategoryName;</span>
+<span class="fc" id="L163">    }</span>
+
+    /**
+     * Returns detected user agent family based on user agent string.
+     * @return detected user agent family based on user agent string.
+     */
+    public String getFamily() {
+<span class="fc" id="L170">        return mFamily;</span>
+    }
+    
+    /**
+     * Sets detected user agent family based on user agent string.
+     * @param family user agent family to be set.
+     */
+    protected void setFamily(String family) {
+<span class="fc" id="L178">        this.mFamily = family;</span>
+<span class="fc" id="L179">    }</span>
+
+    /**
+     * Returns detected operating system family based on user agent string.
+     * @return detected operating system family based on user agent string.
+     */
+    public OperatingSystemFamily getOsFamily() {
+<span class="fc" id="L186">        return mOsFamily;</span>
+    }
+    
+    /**
+     * Sets detected operating system family based on user agent string.
+     * @param osFamily detected operating system fmaily based on user agent
+     * string.
+     */
+    protected void setOsFamily(OperatingSystemFamily osFamily) {
+<span class="fc" id="L195">        this.mOsFamily = osFamily;</span>
+<span class="fc" id="L196">    }</span>
+
+    /**
+     * Returns detected operating system family name based on user agent string.
+     * @return detected operating system family name based on user agent string.
+     */
+    public String getOsFamilyName() {
+<span class="fc" id="L203">        return mOsFamilyName;</span>
+    }
+    
+    /**
+     * Sets detected operating system family name based on user agent string.
+     * @param osFamilyName operating system family name to be set.
+     */
+    protected void setOsFamilyName(String osFamilyName) {
+<span class="fc" id="L211">        this.mOsFamilyName = osFamilyName;</span>
+<span class="fc" id="L212">    }</span>
+
+    /**
+     * Returns detected operating system name based on user agent string.
+     * @return detected operating system name based on user agent string.
+     */
+    public String getOsName() {
+<span class="fc" id="L219">        return mOsName;</span>
+    }
+    
+    /**
+     * Sets detected operating system name based on user agent string.
+     * @param osName operating system name to be set.
+     */
+    protected void setOsName(String osName) {
+<span class="fc" id="L227">        this.mOsName = osName;</span>
+<span class="fc" id="L228">    }</span>
+
+    /**
+     * Returns detected operating system producer based on user agent string.
+     * @return detected operating system producer based on user agent string.
+     */
+    public String getOsProducer() {
+<span class="fc" id="L235">        return mOsProducer;</span>
+    }
+    
+    /**
+     * Sets detected operating system producer based on user agent string.
+     * @param osProducer operating system producer to be set.
+     */
+    protected void setOsProducer(String osProducer) {
+<span class="fc" id="L243">        this.mOsProducer = osProducer;</span>
+<span class="fc" id="L244">    }</span>
+
+    /**
+     * Returns detected operating system version based on user agent string.
+     * @return detected operating system version based on user agent string.
+     */
+    public String getOsVersion() {
+<span class="fc" id="L251">        return mOsVersion;</span>
+    }
+    
+    /**
+     * Sets detected operating system version based on user agent string.
+     * @param osVersion operating system version to be set.
+     */
+    protected void setOsVersion(String osVersion) {
+<span class="fc" id="L259">        this.mOsVersion = osVersion;</span>
+<span class="fc" id="L260">    }</span>
+
+    /**
+     * Returns detected user agent type.
+     * @return detected user agent type.
+     */
+    public UserAgentType getUserAgentType() {
+<span class="fc" id="L267">        return mUserAgentType;</span>
+    }
+    
+    /**
+     * Sets detected user agent type.
+     * @param userAgentType user agent type to be set.
+     */
+    protected void setUserAgentType(UserAgentType userAgentType) {
+<span class="fc" id="L275">        this.mUserAgentType = userAgentType;</span>
+<span class="fc" id="L276">    }</span>
+    
+    /**
+     * Returns version of user agent (i.e. browser version, etc).
+     * @return version of user agent.
+     */
+    public String getUserAgentVersion() {
+<span class="fc" id="L283">        return mUserAgentVersion;</span>
+    }
+    
+    /**
+     * Sets version of user agent (i.e. browser version, etc).
+     * @param userAgentVersion version of user agent to be set.
+     */
+    public void setUserAgentVersion(String userAgentVersion) {
+<span class="fc" id="L291">        this.mUserAgentVersion = userAgentVersion;</span>
+<span class="fc" id="L292">    }</span>
+    
+    /**
+     * Indicates if detected user agent data corresponds to a desktop
+     * web browser or email client.
+     * If true, server should display a typical desktop web UI.
+     * @return true if user agent appears to belong to a desktop web
+     * browser or email client.
+     */
+    public boolean isDesktop() {
+<span class="fc" id="L302">        return isDesktop(mUserAgentType, mDeviceCategory);</span>
+    }
+    
+    /**
+     * Indicates if detected user agent data corresponds to a mobile web browser
+     * or email client.
+     * If true, server should display a UI adapted for small screens like 
+     * smartphones.
+     * @return true if user agent appears to belong to a mobile web browser or
+     * email client.
+     */
+    public boolean isMobile() {
+<span class="fc" id="L314">        return isMobile(mUserAgentType, mDeviceCategory);</span>
+    }
+    
+    /**
+     * Indicates if detected user agent data corresponds to a tablet web browser
+     * or email client.
+     * If true, server should display a UI similar to desktop screens but 
+     * enhanced for touch event (i.e. having larger buttons, support for touch
+     * gestures, etc).
+     * @return true if user agent appears to belong to a tablet web browser or 
+     * email client.
+     */
+    public boolean isTablet() {
+<span class="fc" id="L327">        return isTablet(mUserAgentType, mDeviceCategory);</span>
+    }
+    
+    /**
+     * Indicates if detected user agent data corresponds to a smart TV.
+     * If true, server should display a simple UI ready to be used using a
+     * TV remote control.
+     * @return true if user agent appears to belong to a TV web browser or email
+     * client.
+     */
+    public boolean isSmartTV() {
+<span class="fc" id="L338">        return isSmartTV(mUserAgentType, mDeviceCategory);</span>
+    }
+    
+    /**
+     * Indicates if provided user agent type and device category corresponds to 
+     * a desktop web browser or email client.
+     * If true, server should display a typical desktop web UI.
+     * @param userAgentType user agent type (browser, email client, library, 
+     * etc).
+     * @param deviceCategory device category (desktop PC, smartphone, tablet, 
+     * smart TV, game console, etc).
+     * @return true if user agent appears to belong to a desktop web
+     * browser or email client.
+     */
+    public static boolean isDesktop(UserAgentType userAgentType, 
+            DeviceCategory deviceCategory) {
+<span class="pc bpc" id="L354" title="1 of 16 branches missed.">        return (userAgentType == UserAgentType.BROWSER || </span>
+                userAgentType == UserAgentType.EMAIL_CLIENT) &amp;&amp;
+                (deviceCategory == DeviceCategory.OTHER ||
+                deviceCategory == DeviceCategory.PERSONAL_COMPUTER ||
+                deviceCategory == DeviceCategory.UNKNOWN) || 
+                (!isMobile(userAgentType, deviceCategory) &amp;&amp; 
+                !isTablet(userAgentType, deviceCategory) &amp;&amp; 
+                !isSmartTV(userAgentType, deviceCategory)) ;
+    }
+    
+    /**
+     * Indicates if provided user agent type and device category corresponds to 
+     * a mobile web browser or email client.
+     * If true, server should display a UI adapted for small screens like 
+     * smartphones.
+     * @param userAgentType user agent type (browser, email client, library, 
+     * etc).
+     * @param deviceCategory device category (desktop PC, smartphone, tablet, 
+     * smart TV, game console, etc).
+     * @return true if user agent appears to belong to a mobile web browser or
+     * email client.
+     */
+    public static boolean isMobile(UserAgentType userAgentType, 
+            DeviceCategory deviceCategory) {
+<span class="fc bfc" id="L378" title="All 12 branches covered.">        return (userAgentType == UserAgentType.BROWSER ||</span>
+                userAgentType == UserAgentType.EMAIL_CLIENT ||
+                userAgentType == UserAgentType.MOBILE_BROWSER) &amp;&amp;
+                (deviceCategory == DeviceCategory.PDA ||
+                deviceCategory == DeviceCategory.SMARTPHONE ||
+                deviceCategory == DeviceCategory.WEARABLE_COMPUTER);
+    }
+    
+    /**
+     * Indicates if detected user agent type and device category corresponds to 
+     * a tablet web browser or email client.
+     * If true, server should display a UI similar to desktop screens but 
+     * enhanced for touch event (i.e. having larger buttons, support for touch
+     * gestures, etc).
+     * @param userAgentType user agent type (browser, email client, library, 
+     * etc).
+     * @param deviceCategory device category (desktop PC, smartphone, tablet, 
+     * smart TV, game console, etc).
+     * @return true if user agent appears to belong to a tablet web browser or 
+     * email client.
+     */
+    public static boolean isTablet(UserAgentType userAgentType, 
+            DeviceCategory deviceCategory) {
+<span class="fc bfc" id="L401" title="All 8 branches covered.">        return (userAgentType == UserAgentType.BROWSER ||</span>
+                userAgentType == UserAgentType.EMAIL_CLIENT ||
+                userAgentType == UserAgentType.MOBILE_BROWSER) &amp;&amp;
+                (deviceCategory == DeviceCategory.TABLET);
+    }
+    
+    /**
+     * Indicates if detected user agent type and device category corresponds to 
+     * a smart TV.
+     * If true, server should display a simple UI ready to be used using a
+     * TV remote control.
+     * @param userAgentType user agent type (browser, email client, library, 
+     * etc).
+     * @param deviceCategory device category (desktop PC, smartphone, tablet, 
+     * smart TV, game console, etc).
+     * @return true if user agent appears to belong to a TV web browser or email
+     * client.
+     */
+    public static boolean isSmartTV(UserAgentType userAgentType, 
+            DeviceCategory deviceCategory) {
+<span class="fc bfc" id="L421" title="All 8 branches covered.">        return (userAgentType == UserAgentType.BROWSER ||</span>
+                userAgentType == UserAgentType.EMAIL_CLIENT ||
+                userAgentType == UserAgentType.MOBILE_BROWSER) &amp;&amp;
+                (deviceCategory == DeviceCategory.SMART_TV);
+    }    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

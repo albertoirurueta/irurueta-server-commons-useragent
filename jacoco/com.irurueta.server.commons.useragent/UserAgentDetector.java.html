@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>UserAgentDetector.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">com.irurueta:irurueta-server-commons-useragent</a> &gt; <a href="index.source.html" class="el_package">com.irurueta.server.commons.useragent</a> &gt; <span class="el_source">UserAgentDetector.java</span></div><h1>UserAgentDetector.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (C) 2016 Alberto Irurueta Carro (alberto@irurueta.com)
+ *
+ * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.irurueta.server.commons.useragent;
+
+import com.google.common.cache.Cache;
+import com.google.common.cache.CacheBuilder;
+import java.lang.ref.SoftReference;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import net.sf.uadetector.ReadableDeviceCategory;
+import net.sf.uadetector.ReadableUserAgent;
+import net.sf.uadetector.UserAgentStringParser;
+import net.sf.uadetector.service.UADetectorServiceFactory;
+
+/**
+ * Class to parse and process a user agent from a web browser, web crawler, bot,
+ * email client, RESt library, etc.
+ * This class will detect which kind of user agent made a request, operating 
+ * system information of the requester, kind of device, etc.
+ */
+public class UserAgentDetector {
+    
+    /**
+     * Logger for this class.
+     */
+<span class="fc" id="L40">    private static final Logger LOG = Logger.getLogger(UserAgentDetector.class.</span>
+            getName());
+    
+    /**
+     * Singleton instance of UserAgentDetector stored in a soft reference (to 
+     * keep it cached in memory unless memory is claimed),
+     */
+    private static SoftReference&lt;UserAgentDetector&gt; mReference;
+    
+    /**
+     * Indicates whether user agent detection is enabled or not.
+     */
+    private boolean mEnabled;
+    
+    /**
+     * Amount of user agents that are cached.
+     */
+    private int mCacheSize;
+    
+    /**
+     * Amount of time to keep user agents cached expressed in hours.
+     */
+    private int mCacheExpirationTime;
+    
+    /**
+     * Internal user agent string parser.
+     */
+    private UserAgentStringParser mParser;
+    
+    /**
+     * Cache to hold instantiated instances of radable user agents.
+     */
+    private Cache&lt;String, ReadableUserAgent&gt; mCache;
+    
+    /**
+     * Constructor.
+     * Creates and configures a UserAgentDetector instance.
+     */
+<span class="fc" id="L78">    private UserAgentDetector() {</span>
+<span class="fc" id="L79">        mEnabled = false;</span>
+        try{
+<span class="fc" id="L81">            UserAgentConfiguration cfg = UserAgentConfigurationFactory.</span>
+                    getInstance().configure();
+<span class="fc" id="L83">            mEnabled = cfg.isUserAgentDetectionEnabled();</span>
+<span class="pc bpc" id="L84" title="1 of 2 branches missed.">            if(mEnabled){</span>
+<span class="fc" id="L85">                mCacheSize = cfg.getUserAgentCacheSize();</span>
+<span class="fc" id="L86">                mCacheExpirationTime = </span>
+                        cfg.getUserAgentCacheExpirationTimeHours();
+                
+<span class="fc" id="L89">                mParser = UADetectorServiceFactory.getCachingAndUpdatingParser();</span>
+<span class="fc" id="L90">                mCache = CacheBuilder.newBuilder().maximumSize(mCacheSize).</span>
+                        expireAfterWrite(mCacheExpirationTime, TimeUnit.HOURS).
+                        build();
+<span class="fc" id="L93">                LOG.log(Level.INFO, &quot;User agent detection is enabled&quot;);</span>
+            }else{
+<span class="nc" id="L95">                LOG.log(Level.INFO, &quot;User agent detection is disabled&quot;);</span>
+            }
+            
+<span class="nc" id="L98">        }catch(Throwable t){</span>
+<span class="nc" id="L99">            mEnabled = false;</span>
+<span class="nc" id="L100">            LOG.log(Level.INFO, &quot;User agent detection is disabled because &quot; + </span>
+                    &quot;configuration failed&quot;, t);
+<span class="fc" id="L102">        }</span>
+<span class="fc" id="L103">    }</span>
+    
+    /**
+     * Factory method to return the singleton instance of UserAgentDetector 
+     * based on current configuration.
+     * @return singleton instance.
+     */
+    public static synchronized UserAgentDetector getInstance() {
+        UserAgentDetector detector;
+<span class="pc bpc" id="L112" title="1 of 4 branches missed.">        if (mReference == null || (detector = mReference.get()) == null) {</span>
+<span class="fc" id="L113">            detector = new UserAgentDetector();</span>
+<span class="fc" id="L114">            mReference = new SoftReference&lt;&gt;(detector);</span>
+        }
+<span class="fc" id="L116">        return detector;</span>
+    }
+    
+    /**
+     * Indicates whether user agent detection is enabled or not. If not enabled
+     * no user agent detection will be done when requested.
+     * @return true if user agent detection is enabled, false otherwise.
+     */
+    public boolean isEnabled() {
+<span class="fc" id="L125">        return mEnabled;</span>
+    }
+    
+    /**
+     * Amount of user agents that are cached.
+     * A cache of user agents is used to speed up the parsing process when
+     * user agents get repeated, which can happen if a user makes several
+     * requests to the server, or multiple users have the same user agent
+     * @return amount of user agents that are cached.
+     */
+    public int getCacheSize() {
+<span class="fc" id="L136">        return mCacheSize;</span>
+    }
+    
+    /**
+     * Amount of time to keep user agents cached expressed in hours.
+     * @return amount of time to keep user agents cached expressed in hours.
+     */
+    public int getCacheExpirationTime() {
+<span class="fc" id="L144">        return mCacheExpirationTime;</span>
+    }
+    
+    /**
+     * Detects data on provided user agent string.
+     * Detected data can be operating system, user agent type (browser, mail 
+     * client, etc), user agent family, type of device, etc.
+     * @param userAgentString original user agent string being parsed
+     * @return detected user agent data.
+     * @throws UserAgentDetectionDisabledException if user agent detection is
+     * disabled.
+     * @throws UserAgentException if anything else fails.
+     */
+    public UserAgentData detect(String userAgentString) throws 
+            UserAgentDetectionDisabledException, UserAgentException {
+<span class="pc bpc" id="L159" title="1 of 2 branches missed.">        if(!mEnabled) throw new UserAgentDetectionDisabledException();</span>
+        
+        try{
+<span class="fc" id="L162">            ReadableUserAgent result = mCache.getIfPresent(userAgentString);</span>
+<span class="fc bfc" id="L163" title="All 2 branches covered.">            if(result == null){</span>
+<span class="fc" id="L164">                result = mParser.parse(userAgentString);</span>
+<span class="fc" id="L165">                mCache.put(userAgentString, result);</span>
+            }        
+        
+<span class="fc" id="L168">            DeviceCategory deviceCategory = null;</span>
+<span class="fc" id="L169">            String deviceCategoryName = null;</span>
+<span class="pc bpc" id="L170" title="1 of 2 branches missed.">            if(result.getDeviceCategory() != null){</span>
+<span class="fc" id="L171">                deviceCategory = toDeviceCategory(</span>
+                        result.getDeviceCategory().getCategory());
+<span class="fc" id="L173">                deviceCategoryName = result.getDeviceCategory().getName();</span>
+            }
+<span class="pc bpc" id="L175" title="1 of 2 branches missed.">            String family = (result.getFamily() != null) ? </span>
+                    result.getFamily().getName() : null;
+<span class="pc bpc" id="L177" title="1 of 2 branches missed.">            OperatingSystemFamily osFamily = result.getOperatingSystem() != null ?</span>
+                    toOsFamily(result.getOperatingSystem().getFamily()) : null;
+<span class="fc" id="L179">            String osFamilyName = null, osName = null, osProducer = null, </span>
+<span class="fc" id="L180">                    osVersion = null;</span>
+<span class="pc bpc" id="L181" title="1 of 2 branches missed.">            if(result.getOperatingSystem() != null){</span>
+<span class="fc" id="L182">                osFamilyName = result.getOperatingSystem().getFamilyName();</span>
+<span class="fc" id="L183">                osName = result.getOperatingSystem().getName();</span>
+<span class="fc" id="L184">                osProducer = result.getOperatingSystem().getProducer();</span>
+<span class="pc bpc" id="L185" title="1 of 2 branches missed.">                osVersion = result.getOperatingSystem().getVersionNumber() != null ?</span>
+                        result.getOperatingSystem().getVersionNumber().toVersionString() : null;
+            }
+<span class="fc" id="L188">            UserAgentType userAgentType = toUserAgentType(result.getType());</span>
+<span class="pc bpc" id="L189" title="1 of 2 branches missed.">            String userAgentVersion = result.getVersionNumber() != null ?</span>
+                    result.getVersionNumber().toVersionString() : null;
+            
+<span class="fc" id="L192">            return new UserAgentData(userAgentString, deviceCategory, </span>
+                    deviceCategoryName, family, osFamily, osFamilyName, osName,
+                    osProducer, osVersion, userAgentType, userAgentVersion);
+<span class="nc" id="L195">        }catch(Throwable t){</span>
+<span class="nc" id="L196">            throw new UserAgentException(t);</span>
+        }
+    }
+    
+    /**
+     * Stops internal user agent parser. Once closed, user agent detection will 
+     * no longer be available.
+     */
+    public void close() {
+<span class="pc bpc" id="L205" title="1 of 2 branches missed.">        if(mParser != null) mParser.shutdown();</span>
+<span class="pc bpc" id="L206" title="1 of 2 branches missed.">        if(mCache != null) mCache.invalidateAll();</span>
+<span class="fc" id="L207">        mEnabled = false;</span>
+<span class="fc" id="L208">        LOG.log(Level.INFO, &quot;User agent detection has been shutdown&quot;);</span>
+<span class="fc" id="L209">    }</span>
+    
+    /**
+     * Resets UserAgentDetector so a new instance having new configuration can
+     * be created.
+     */
+    protected static synchronized void reset() {
+<span class="pc bpc" id="L216" title="1 of 2 branches missed.">        UserAgentDetector detector = mReference != null ? </span>
+                mReference.get() : null;
+<span class="pc bpc" id="L218" title="1 of 2 branches missed.">        if(detector != null){</span>
+<span class="fc" id="L219">            detector.close();</span>
+        }
+<span class="fc" id="L221">        mReference = null;</span>
+<span class="fc" id="L222">    }   </span>
+    
+    /**
+     * This method is called on garbage collection.
+     * When this method is called, internal user agent parser will be stopped.
+     * @throws Throwable if anything fails.
+     */
+    @Override
+    protected void finalize() throws Throwable {
+        try{
+<span class="nc" id="L232">            close();</span>
+<span class="nc" id="L233">        }catch(Throwable ignore){</span>
+        }finally{
+<span class="nc" id="L235">            super.finalize();</span>
+<span class="nc" id="L236">        }</span>
+<span class="nc" id="L237">    }</span>
+    
+    /**
+     * Converts an internal device category enumerator into a DeviceCategory 
+     * enumerator used by this package.
+     * @param category internal category to be converted.
+     * @return a device category.
+     */
+    protected DeviceCategory toDeviceCategory(
+            ReadableDeviceCategory.Category category) {
+<span class="pc bpc" id="L247" title="1 of 2 branches missed.">        if(category != null){</span>
+<span class="pc bpc" id="L248" title="1 of 10 branches missed.">            switch(category){</span>
+                case GAME_CONSOLE:
+<span class="fc" id="L250">                    return DeviceCategory.GAME_CONSOLE;</span>
+                case OTHER:
+<span class="fc" id="L252">                    return DeviceCategory.OTHER;</span>
+                case PDA:
+<span class="fc" id="L254">                    return DeviceCategory.PDA;</span>
+                case PERSONAL_COMPUTER:
+<span class="fc" id="L256">                    return DeviceCategory.PERSONAL_COMPUTER;</span>
+                case SMARTPHONE:
+<span class="fc" id="L258">                    return DeviceCategory.SMARTPHONE;</span>
+                case SMART_TV:
+<span class="fc" id="L260">                    return DeviceCategory.SMART_TV;</span>
+                case TABLET:
+<span class="fc" id="L262">                    return DeviceCategory.TABLET;</span>
+                case UNKNOWN:
+<span class="fc" id="L264">                    return DeviceCategory.UNKNOWN;</span>
+                case WEARABLE_COMPUTER:
+<span class="fc" id="L266">                    return DeviceCategory.WEARABLE_COMPUTER;</span>
+            }
+        }
+<span class="nc" id="L269">        return null;</span>
+    }
+    
+    /**
+     * Converts an internal OS family enumerator into an OperatingSystemFamily.
+     * enumerator used by this package.
+     * @param family internal Os family to be converted.
+     * @return an OS family.
+     */    
+    protected OperatingSystemFamily toOsFamily(
+            net.sf.uadetector.OperatingSystemFamily family) {
+<span class="pc bpc" id="L280" title="1 of 2 branches missed.">        if(family != null){</span>
+<span class="pc bpc" id="L281" title="1 of 41 branches missed.">            switch(family){</span>
+                case AIX:
+<span class="fc" id="L283">                    return OperatingSystemFamily.AIX;</span>
+                case AMIGA_OS:
+<span class="fc" id="L285">                    return OperatingSystemFamily.AMIGA_OS;</span>
+                case ANDROID:
+<span class="fc" id="L287">                    return OperatingSystemFamily.ANDROID;</span>
+                case AROS:
+<span class="fc" id="L289">                    return OperatingSystemFamily.AROS;</span>
+                case BADA:
+<span class="fc" id="L291">                    return OperatingSystemFamily.BADA;</span>
+                case BEOS:
+<span class="fc" id="L293">                    return OperatingSystemFamily.BEOS;</span>
+                case BLACKBERRY_OS:
+<span class="fc" id="L295">                    return OperatingSystemFamily.BLACKBERRY_OS;</span>
+                case BREW:
+<span class="fc" id="L297">                    return OperatingSystemFamily.BREW;</span>
+                case BSD:
+<span class="fc" id="L299">                    return OperatingSystemFamily.BSD;</span>
+                case DANGEROS:
+<span class="fc" id="L301">                    return OperatingSystemFamily.DANGEROS;</span>
+                case FIREFOX_OS:
+<span class="fc" id="L303">                    return OperatingSystemFamily.FIREFOX_OS;</span>
+                case HAIKU:
+<span class="fc" id="L305">                    return OperatingSystemFamily.HAIKU;</span>
+                case HPUX:
+<span class="fc" id="L307">                    return OperatingSystemFamily.HPUX;</span>
+                case INFERNO_OS:
+<span class="fc" id="L309">                    return OperatingSystemFamily.INFERNO_OS;</span>
+                case IOS:
+<span class="fc" id="L311">                    return OperatingSystemFamily.IOS;</span>
+                case IRIX:
+<span class="fc" id="L313">                    return OperatingSystemFamily.IRIX;</span>
+                case JVM:
+<span class="fc" id="L315">                    return OperatingSystemFamily.JVM;</span>
+                case LINUX:
+<span class="fc" id="L317">                    return OperatingSystemFamily.LINUX;</span>
+                case MAC_OS:
+<span class="fc" id="L319">                    return OperatingSystemFamily.MAC_OS;</span>
+                case MEEGO:
+<span class="fc" id="L321">                    return OperatingSystemFamily.MEEGO;</span>
+                case MINIX:
+<span class="fc" id="L323">                    return OperatingSystemFamily.MINIX;</span>
+                case MORPHOS:
+<span class="fc" id="L325">                    return OperatingSystemFamily.MORPHOS;</span>
+                case NINTENDO:
+<span class="fc" id="L327">                    return OperatingSystemFamily.NINTENDO;</span>
+                case OPENVMS:
+<span class="fc" id="L329">                    return OperatingSystemFamily.OPENVMS;</span>
+                case OS_2:
+<span class="fc" id="L331">                    return OperatingSystemFamily.OS_2;</span>
+                case OS_X:
+<span class="fc" id="L333">                    return OperatingSystemFamily.OS_X;</span>
+                case PALM_OS:
+<span class="fc" id="L335">                    return OperatingSystemFamily.PALM_OS;</span>
+                case PLAYSTATION_VITA:
+<span class="fc" id="L337">                    return OperatingSystemFamily.PLAYSTATION_VITA;</span>
+                case QNX:
+<span class="fc" id="L339">                    return OperatingSystemFamily.QNX;</span>
+                case RISC_OS:
+<span class="fc" id="L341">                    return OperatingSystemFamily.RISC_OS;</span>
+                case SAILFISH_OS:
+<span class="fc" id="L343">                    return OperatingSystemFamily.SAILFISH_OS;</span>
+                case SOLARIS:
+<span class="fc" id="L345">                    return OperatingSystemFamily.SOLARIS;</span>
+                case SYLLABLE:
+<span class="fc" id="L347">                    return OperatingSystemFamily.SYLLABLE;</span>
+                case SYMBIAN:
+<span class="fc" id="L349">                    return OperatingSystemFamily.SYMBIAN;</span>
+                case TIZEN:
+<span class="fc" id="L351">                    return OperatingSystemFamily.TIZEN;</span>
+                case UNKNOWN:
+<span class="fc" id="L353">                    return OperatingSystemFamily.UNKNOWN;</span>
+                case WEBOS:
+<span class="fc" id="L355">                    return OperatingSystemFamily.WEBOS;                    </span>
+                case WII_OS:
+<span class="fc" id="L357">                    return OperatingSystemFamily.WII_OS;</span>
+                case WINDOWS:
+<span class="fc" id="L359">                    return OperatingSystemFamily.WINDOWS;</span>
+                case XROSSMEDIABAR:
+<span class="fc" id="L361">                    return OperatingSystemFamily.XROSSMEDIABAR;</span>
+            }
+        }
+<span class="nc" id="L364">        return null;</span>
+    }
+    
+    /**
+     * Converts an internal user agent type enumerator into a UserAgentType
+     * enumerator used by this package.
+     * @param type internal user agent type to be converted.
+     * @return a user agent type.
+     */
+    protected UserAgentType toUserAgentType(
+            net.sf.uadetector.UserAgentType type) {
+<span class="pc bpc" id="L375" title="1 of 2 branches missed.">        if(type != null){</span>
+<span class="pc bpc" id="L376" title="1 of 14 branches missed.">            switch(type){</span>
+                case BROWSER:
+<span class="fc" id="L378">                    return UserAgentType.BROWSER;</span>
+                case EMAIL_CLIENT:
+<span class="fc" id="L380">                    return UserAgentType.EMAIL_CLIENT;</span>
+                case FEED_READER:
+<span class="fc" id="L382">                    return UserAgentType.FEED_READER;</span>
+                case LIBRARY:
+<span class="fc" id="L384">                    return UserAgentType.LIBRARY;</span>
+                case MEDIAPLAYER:
+<span class="fc" id="L386">                    return UserAgentType.MEDIAPLAYER;</span>
+                case MOBILE_BROWSER:
+<span class="fc" id="L388">                    return UserAgentType.MOBILE_BROWSER;</span>
+                case OFFLINE_BROWSER:
+<span class="fc" id="L390">                    return UserAgentType.OFFLINE_BROWSER;</span>
+                case OTHER:
+<span class="fc" id="L392">                    return UserAgentType.OTHER;</span>
+                case ROBOT:
+<span class="fc" id="L394">                    return UserAgentType.ROBOT;</span>
+                case UNKNOWN:
+<span class="fc" id="L396">                    return UserAgentType.UNKNOWN;</span>
+                case USERAGENT_ANONYMIZER:
+<span class="fc" id="L398">                    return UserAgentType.USERAGENT_ANONYMIZER;</span>
+                case VALIDATOR:
+<span class="fc" id="L400">                    return UserAgentType.VALIDATOR;</span>
+                case WAP_BROWSER:
+<span class="fc" id="L402">                    return UserAgentType.WAP_BROWSER;</span>
+            }
+        }
+<span class="nc" id="L405">        return null;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
