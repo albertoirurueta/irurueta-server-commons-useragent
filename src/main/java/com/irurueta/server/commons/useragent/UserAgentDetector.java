@@ -42,7 +42,7 @@ public class UserAgentDetector {
     
     /**
      * Singleton instance of UserAgentDetector stored in a soft reference (to 
-     * keep it cached in memory unless memory is claimed),
+     * keep it cached in memory unless memory is claimed).
      */
     private static SoftReference<UserAgentDetector> mReference;
     
@@ -77,11 +77,11 @@ public class UserAgentDetector {
      */
     private UserAgentDetector() {
         mEnabled = false;
-        try{
+        try {
             UserAgentConfiguration cfg = UserAgentConfigurationFactory.
                     getInstance().configure();
             mEnabled = cfg.isUserAgentDetectionEnabled();
-            if(mEnabled){
+            if (mEnabled) {
                 mCacheSize = cfg.getUserAgentCacheSize();
                 mCacheExpirationTime = 
                         cfg.getUserAgentCacheExpirationTimeHours();
@@ -91,11 +91,11 @@ public class UserAgentDetector {
                         expireAfterWrite(mCacheExpirationTime, TimeUnit.HOURS).
                         build();
                 LOG.log(Level.INFO, "User agent detection is enabled");
-            }else{
+            } else {
                 LOG.log(Level.INFO, "User agent detection is disabled");
             }
             
-        }catch(Throwable t){
+        } catch(Throwable t) {
             mEnabled = false;
             LOG.log(Level.INFO, "User agent detection is disabled because " + 
                     "configuration failed", t);
@@ -156,18 +156,20 @@ public class UserAgentDetector {
      */
     public UserAgentData detect(String userAgentString) throws 
             UserAgentDetectionDisabledException, UserAgentException {
-        if(!mEnabled) throw new UserAgentDetectionDisabledException();
+        if(!mEnabled) {
+            throw new UserAgentDetectionDisabledException();
+        }
         
-        try{
+        try {
             ReadableUserAgent result = mCache.getIfPresent(userAgentString);
-            if(result == null){
+            if (result == null) {
                 result = mParser.parse(userAgentString);
                 mCache.put(userAgentString, result);
             }        
         
             DeviceCategory deviceCategory = null;
             String deviceCategoryName = null;
-            if(result.getDeviceCategory() != null){
+            if (result.getDeviceCategory() != null) {
                 deviceCategory = toDeviceCategory(
                         result.getDeviceCategory().getCategory());
                 deviceCategoryName = result.getDeviceCategory().getName();
@@ -178,7 +180,7 @@ public class UserAgentDetector {
                     toOsFamily(result.getOperatingSystem().getFamily()) : null;
             String osFamilyName = null, osName = null, osProducer = null, 
                     osVersion = null;
-            if(result.getOperatingSystem() != null){
+            if (result.getOperatingSystem() != null) {
                 osFamilyName = result.getOperatingSystem().getFamilyName();
                 osName = result.getOperatingSystem().getName();
                 osProducer = result.getOperatingSystem().getProducer();
@@ -202,8 +204,12 @@ public class UserAgentDetector {
      * no longer be available.
      */
     public void close() {
-        if(mParser != null) mParser.shutdown();
-        if(mCache != null) mCache.invalidateAll();
+        if(mParser != null) {
+            mParser.shutdown();
+        }
+        if(mCache != null) {
+            mCache.invalidateAll();
+        }
         mEnabled = false;
         LOG.log(Level.INFO, "User agent detection has been shutdown");
     }
@@ -215,7 +221,7 @@ public class UserAgentDetector {
     protected static synchronized void reset() {
         UserAgentDetector detector = mReference != null ? 
                 mReference.get() : null;
-        if(detector != null){
+        if (detector != null) {
             detector.close();
         }
         mReference = null;
@@ -228,10 +234,10 @@ public class UserAgentDetector {
      */
     @Override
     protected void finalize() throws Throwable {
-        try{
+        try {
             close();
-        }catch(Throwable ignore){
-        }finally{
+        } catch (Throwable ignore) {
+        } finally {
             super.finalize();
         }
     }
@@ -242,10 +248,10 @@ public class UserAgentDetector {
      * @param category internal category to be converted.
      * @return a device category.
      */
-    protected DeviceCategory toDeviceCategory(
+    protected DeviceCategory toDeviceCategory (
             ReadableDeviceCategory.Category category) {
-        if(category != null){
-            switch(category){
+        if (category != null) {
+            switch (category) {
                 case GAME_CONSOLE:
                     return DeviceCategory.GAME_CONSOLE;
                 case OTHER:
@@ -275,10 +281,10 @@ public class UserAgentDetector {
      * @param family internal Os family to be converted.
      * @return an OS family.
      */    
-    protected OperatingSystemFamily toOsFamily(
+    protected OperatingSystemFamily toOsFamily (
             net.sf.uadetector.OperatingSystemFamily family) {
-        if(family != null){
-            switch(family){
+        if (family != null) {
+            switch (family) {
                 case AIX:
                     return OperatingSystemFamily.AIX;
                 case AMIGA_OS:
@@ -370,10 +376,10 @@ public class UserAgentDetector {
      * @param type internal user agent type to be converted.
      * @return a user agent type.
      */
-    protected UserAgentType toUserAgentType(
+    protected UserAgentType toUserAgentType (
             net.sf.uadetector.UserAgentType type) {
-        if(type != null){
-            switch(type){
+        if (type != null) {
+            switch (type) {
                 case BROWSER:
                     return UserAgentType.BROWSER;
                 case EMAIL_CLIENT:

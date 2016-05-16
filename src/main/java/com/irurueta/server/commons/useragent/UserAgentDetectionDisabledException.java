@@ -19,7 +19,7 @@ package com.irurueta.server.commons.useragent;
  * Exception raised if attempting to detect a user agent when user agent 
  * detection is disabled.
  */
-public class UserAgentDetectionDisabledException extends UserAgentException{
+public class UserAgentDetectionDisabledException extends UserAgentException {
     
     /**
      * Constructor.

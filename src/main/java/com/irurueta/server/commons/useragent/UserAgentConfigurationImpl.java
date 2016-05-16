@@ -103,7 +103,7 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
     @Override
     public final void fromProperties(Properties properties) 
             throws ConfigurationException {
-        try{
+        try {
             mUserAgentDetectionEnabled = Boolean.valueOf(properties.getProperty(
                     UserAgentConfigurationFactory.
                     USER_AGENT_DETECTION_ENABLED_PROPERTY, Boolean.toString(
@@ -116,7 +116,7 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
                     UserAgentConfigurationFactory.
                     DEFAULT_USER_AGENT_CACHE_SIZE)));
             
-            if(mUserAgentCacheSize <= 0){
+            if (mUserAgentCacheSize <= 0) {
                 throw new ConfigurationException(
                         "User agent cache size must be positive");
             }
@@ -127,13 +127,13 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
                     toString(UserAgentConfigurationFactory.
                     DEFAULT_USER_AGENT_CACHE_EXPIRATION_TIME_HOURS)));
             
-            if(mUserAgentCacheExpirationTimeHours <= 0){
+            if (mUserAgentCacheExpirationTimeHours <= 0) {
                 throw new ConfigurationException("User agent cache " + 
                         "expiration time must be positive");
             }
-        }catch(ConfigurationException e){
+        } catch(ConfigurationException e) {
             throw e;
-        }catch(Throwable t){
+        } catch(Throwable t) {
             throw new ConfigurationException(t);
         }
     }

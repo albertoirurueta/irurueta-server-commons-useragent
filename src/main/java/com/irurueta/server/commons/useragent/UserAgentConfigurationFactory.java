@@ -68,18 +68,18 @@ public class UserAgentConfigurationFactory extends
      * Reference to factory singleton (to keep it cached in memory unless memory
      * is claimed).
      */
-    private static SoftReference<UserAgentConfigurationFactory> mReference = null;
+    private static SoftReference<UserAgentConfigurationFactory> mReference;
     
     /**
      * Constructor.
      */
-    private UserAgentConfigurationFactory() {}
+    private UserAgentConfigurationFactory() { }
     
     /**
      * Factory method to create or return singleton instance.
      * @return factory singleton.
      */
-    public synchronized static UserAgentConfigurationFactory getInstance() {
+    public static synchronized UserAgentConfigurationFactory getInstance() {
         UserAgentConfigurationFactory factory;
         if (mReference == null || (factory = mReference.get()) == null) {
             factory = new UserAgentConfigurationFactory();
@@ -97,12 +97,14 @@ public class UserAgentConfigurationFactory extends
     @Override
     public UserAgentConfiguration configure(Properties properties) 
             throws ConfigurationException {
-        if(mConfiguration != null) return mConfiguration;
+        if (mConfiguration != null) {
+            return mConfiguration;
+        }
         
-        if(properties == null){
+        if (properties == null) {
             //use default configuration
             mConfiguration = new UserAgentConfigurationImpl();
-        }else{
+        } else {
             mConfiguration = new UserAgentConfigurationImpl(properties);
         }
         
@@ -126,6 +128,5 @@ public class UserAgentConfigurationFactory extends
         UserAgentDetector.reset();
         mConfiguration = null;
         return super.reset();
-    }
-    
+    }    
 }
