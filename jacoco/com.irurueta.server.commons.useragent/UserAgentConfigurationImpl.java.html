@@ -103,7 +103,7 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
     @Override
     public final void fromProperties(Properties properties) 
             throws ConfigurationException {
-        try{
+        try {
 <span class="fc" id="L107">            mUserAgentDetectionEnabled = Boolean.valueOf(properties.getProperty(</span>
                     UserAgentConfigurationFactory.
                     USER_AGENT_DETECTION_ENABLED_PROPERTY, Boolean.toString(
@@ -116,7 +116,7 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
                     UserAgentConfigurationFactory.
                     DEFAULT_USER_AGENT_CACHE_SIZE)));
             
-<span class="fc bfc" id="L119" title="All 2 branches covered.">            if(mUserAgentCacheSize &lt;= 0){</span>
+<span class="fc bfc" id="L119" title="All 2 branches covered.">            if (mUserAgentCacheSize &lt;= 0) {</span>
 <span class="fc" id="L120">                throw new ConfigurationException(</span>
                         &quot;User agent cache size must be positive&quot;);
             }
@@ -127,13 +127,13 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
                     toString(UserAgentConfigurationFactory.
                     DEFAULT_USER_AGENT_CACHE_EXPIRATION_TIME_HOURS)));
             
-<span class="fc bfc" id="L130" title="All 2 branches covered.">            if(mUserAgentCacheExpirationTimeHours &lt;= 0){</span>
+<span class="fc bfc" id="L130" title="All 2 branches covered.">            if (mUserAgentCacheExpirationTimeHours &lt;= 0) {</span>
 <span class="fc" id="L131">                throw new ConfigurationException(&quot;User agent cache &quot; + </span>
                         &quot;expiration time must be positive&quot;);
             }
-<span class="fc" id="L134">        }catch(ConfigurationException e){</span>
+<span class="fc" id="L134">        } catch(ConfigurationException e) {</span>
 <span class="fc" id="L135">            throw e;</span>
-<span class="fc" id="L136">        }catch(Throwable t){</span>
+<span class="fc" id="L136">        } catch(Throwable t) {</span>
 <span class="fc" id="L137">            throw new ConfigurationException(t);</span>
 <span class="fc" id="L138">        }</span>
 <span class="fc" id="L139">    }</span>
