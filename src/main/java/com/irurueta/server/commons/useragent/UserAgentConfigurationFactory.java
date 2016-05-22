@@ -65,11 +65,10 @@ public class UserAgentConfigurationFactory extends
     public static final int DEFAULT_USER_AGENT_CACHE_EXPIRATION_TIME_HOURS = 2;
     
     /**
-     * Reference to factory singleton (to keep it cached in memory unless memory
-     * is claimed).
+     * Reference to factory singleton.
      */
-    private static SoftReference<UserAgentConfigurationFactory> mReference;
-    
+    private static UserAgentConfigurationFactory mSingleton = null;
+        
     /**
      * Constructor.
      */
@@ -80,12 +79,8 @@ public class UserAgentConfigurationFactory extends
      * @return factory singleton.
      */
     public static synchronized UserAgentConfigurationFactory getInstance() {
-        UserAgentConfigurationFactory factory;
-        if (mReference == null || (factory = mReference.get()) == null) {
-            factory = new UserAgentConfigurationFactory();
-            mReference = new SoftReference<>(factory);
-        }
-        return factory;
+        if(mSingleton == null) mSingleton = new UserAgentConfigurationFactory();
+        return mSingleton;
     }
     
     /**
