@@ -1,6 +1,6 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 com.irurueta:irurueta-server-commons-useragent,com.irurueta.server.commons.useragent,UserAgentDetectionDisabledException,0,16,0,0,0,8,0,4,0,4
-com.irurueta:irurueta-server-commons-useragent,com.irurueta.server.commons.useragent,UserAgentConfigurationFactory,0,56,1,7,0,15,1,7,0,4
+com.irurueta:irurueta-server-commons-useragent,com.irurueta.server.commons.useragent,UserAgentConfigurationFactory,0,48,0,6,0,14,0,8,0,5
 com.irurueta:irurueta-server-commons-useragent,com.irurueta.server.commons.useragent,UserAgentType,9,139,0,0,0,14,2,2,2,2
 com.irurueta:irurueta-server-commons-useragent,com.irurueta.server.commons.useragent,UserAgentData,0,222,1,43,0,54,1,52,0,31
 com.irurueta:irurueta-server-commons-useragent,com.irurueta.server.commons.useragent,OperatingSystemFamily,9,409,0,0,0,41,2,2,2,2
