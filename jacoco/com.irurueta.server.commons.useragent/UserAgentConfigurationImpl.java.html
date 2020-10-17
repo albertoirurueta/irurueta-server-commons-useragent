@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>UserAgentConfigurationImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">com.irurueta:irurueta-server-commons-useragent</a> &gt; <a href="index.source.html" class="el_package">com.irurueta.server.commons.useragent</a> &gt; <span class="el_source">UserAgentConfigurationImpl.java</span></div><h1>UserAgentConfigurationImpl.java</h1><pre class="source lang-java linenums">/**
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserAgentConfigurationImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">com.irurueta:irurueta-server-commons-useragent</a> &gt; <a href="index.source.html" class="el_package">com.irurueta.server.commons.useragent</a> &gt; <span class="el_source">UserAgentConfigurationImpl.java</span></div><h1>UserAgentConfigurationImpl.java</h1><pre class="source lang-java linenums">/**
  * Copyright (C) 2016 Alberto Irurueta Carro (alberto@irurueta.com)
  *
  * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
@@ -106,13 +106,13 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
         try {
 <span class="fc" id="L107">            mUserAgentDetectionEnabled = Boolean.valueOf(properties.getProperty(</span>
                     UserAgentConfigurationFactory.
-                    USER_AGENT_DETECTION_ENABLED_PROPERTY, Boolean.toString(
+<span class="fc" id="L109">                    USER_AGENT_DETECTION_ENABLED_PROPERTY, Boolean.toString(</span>
                     UserAgentConfigurationFactory.
                     DEFAULT_USER_AGENT_DETECTION_ENABLED)));
             
 <span class="fc" id="L113">            mUserAgentCacheSize = Integer.valueOf(properties.getProperty(</span>
                     UserAgentConfigurationFactory.
-                    USER_AGENT_CACHE_SIZE_PROPERTY, Integer.toString(
+<span class="fc" id="L115">                    USER_AGENT_CACHE_SIZE_PROPERTY, Integer.toString(</span>
                     UserAgentConfigurationFactory.
                     DEFAULT_USER_AGENT_CACHE_SIZE)));
             
@@ -122,9 +122,9 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
             }
             
 <span class="fc" id="L124">            mUserAgentCacheExpirationTimeHours = Integer.valueOf(properties.</span>
-                    getProperty(UserAgentConfigurationFactory.
+<span class="fc" id="L125">                    getProperty(UserAgentConfigurationFactory.</span>
                     USER_AGENT_CACHE_EXPIRATION_TIME_HOURS_PROPERTY, Integer.
-                    toString(UserAgentConfigurationFactory.
+<span class="fc" id="L127">                    toString(UserAgentConfigurationFactory.</span>
                     DEFAULT_USER_AGENT_CACHE_EXPIRATION_TIME_HOURS)));
             
 <span class="fc bfc" id="L130" title="All 2 branches covered.">            if (mUserAgentCacheExpirationTimeHours &lt;= 0) {</span>
@@ -146,13 +146,13 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
     public Properties toProperties() {
 <span class="fc" id="L147">        Properties properties = new Properties();</span>
 <span class="fc" id="L148">        properties.setProperty(UserAgentConfigurationFactory.</span>
-                USER_AGENT_DETECTION_ENABLED_PROPERTY, Boolean.toString(mUserAgentDetectionEnabled));
+<span class="fc" id="L149">                USER_AGENT_DETECTION_ENABLED_PROPERTY, Boolean.toString(mUserAgentDetectionEnabled));</span>
 <span class="fc" id="L150">        properties.setProperty(UserAgentConfigurationFactory.</span>
-                USER_AGENT_CACHE_SIZE_PROPERTY, Integer.toString(mUserAgentCacheSize));
+<span class="fc" id="L151">                USER_AGENT_CACHE_SIZE_PROPERTY, Integer.toString(mUserAgentCacheSize));</span>
 <span class="fc" id="L152">        properties.setProperty(UserAgentConfigurationFactory.</span>
                 USER_AGENT_CACHE_EXPIRATION_TIME_HOURS_PROPERTY, 
-                Integer.toString(mUserAgentCacheExpirationTimeHours));
+<span class="fc" id="L154">                Integer.toString(mUserAgentCacheExpirationTimeHours));</span>
 <span class="fc" id="L155">        return properties;</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

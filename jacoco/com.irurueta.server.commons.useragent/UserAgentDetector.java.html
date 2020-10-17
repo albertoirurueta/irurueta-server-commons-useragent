@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>UserAgentDetector.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">com.irurueta:irurueta-server-commons-useragent</a> &gt; <a href="index.source.html" class="el_package">com.irurueta.server.commons.useragent</a> &gt; <span class="el_source">UserAgentDetector.java</span></div><h1>UserAgentDetector.java</h1><pre class="source lang-java linenums">/**
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserAgentDetector.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">com.irurueta:irurueta-server-commons-useragent</a> &gt; <a href="index.source.html" class="el_package">com.irurueta.server.commons.useragent</a> &gt; <span class="el_source">UserAgentDetector.java</span></div><h1>UserAgentDetector.java</h1><pre class="source lang-java linenums">/**
  * Copyright (C) 2016 Alberto Irurueta Carro (alberto@irurueta.com)
  *
  * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
@@ -38,7 +38,7 @@ public class UserAgentDetector {
      * Logger for this class.
      */
 <span class="fc" id="L40">    private static final Logger LOG = Logger.getLogger(UserAgentDetector.class.</span>
-            getName());
+<span class="fc" id="L41">            getName());</span>
     
     /**
      * Singleton instance of UserAgentDetector stored in a soft reference (to 
@@ -78,18 +78,18 @@ public class UserAgentDetector {
 <span class="fc" id="L78">    private UserAgentDetector() {</span>
 <span class="fc" id="L79">        mEnabled = false;</span>
         try {
-<span class="fc" id="L81">            UserAgentConfiguration cfg = UserAgentConfigurationFactory.</span>
-                    getInstance().configure();
+            UserAgentConfiguration cfg = UserAgentConfigurationFactory.
+<span class="fc" id="L82">                    getInstance().configure();</span>
 <span class="fc" id="L83">            mEnabled = cfg.isUserAgentDetectionEnabled();</span>
 <span class="pc bpc" id="L84" title="1 of 2 branches missed.">            if (mEnabled) {</span>
 <span class="fc" id="L85">                mCacheSize = cfg.getUserAgentCacheSize();</span>
 <span class="fc" id="L86">                mCacheExpirationTime = </span>
-                        cfg.getUserAgentCacheExpirationTimeHours();
+<span class="fc" id="L87">                        cfg.getUserAgentCacheExpirationTimeHours();</span>
                 
 <span class="fc" id="L89">                mParser = UADetectorServiceFactory.getCachingAndUpdatingParser();</span>
 <span class="fc" id="L90">                mCache = CacheBuilder.newBuilder().maximumSize(mCacheSize).</span>
-                        expireAfterWrite(mCacheExpirationTime, TimeUnit.HOURS).
-                        build();
+<span class="fc" id="L91">                        expireAfterWrite(mCacheExpirationTime, TimeUnit.HOURS).</span>
+<span class="fc" id="L92">                        build();</span>
 <span class="fc" id="L93">                LOG.log(Level.INFO, &quot;User agent detection is enabled&quot;);</span>
             } else {
 <span class="nc" id="L95">                LOG.log(Level.INFO, &quot;User agent detection is disabled&quot;);</span>
@@ -171,13 +171,13 @@ public class UserAgentDetector {
 <span class="fc" id="L171">            String deviceCategoryName = null;</span>
 <span class="pc bpc" id="L172" title="1 of 2 branches missed.">            if (result.getDeviceCategory() != null) {</span>
 <span class="fc" id="L173">                deviceCategory = toDeviceCategory(</span>
-                        result.getDeviceCategory().getCategory());
+<span class="fc" id="L174">                        result.getDeviceCategory().getCategory());</span>
 <span class="fc" id="L175">                deviceCategoryName = result.getDeviceCategory().getName();</span>
             }
 <span class="pc bpc" id="L177" title="1 of 2 branches missed.">            String family = (result.getFamily() != null) ? </span>
-                    result.getFamily().getName() : null;
+<span class="pc" id="L178">                    result.getFamily().getName() : null;</span>
 <span class="pc bpc" id="L179" title="1 of 2 branches missed.">            OperatingSystemFamily osFamily = result.getOperatingSystem() != null ?</span>
-                    toOsFamily(result.getOperatingSystem().getFamily()) : null;
+<span class="pc" id="L180">                    toOsFamily(result.getOperatingSystem().getFamily()) : null;</span>
 <span class="fc" id="L181">            String osFamilyName = null, osName = null, osProducer = null, </span>
 <span class="fc" id="L182">                    osVersion = null;</span>
 <span class="pc bpc" id="L183" title="1 of 2 branches missed.">            if (result.getOperatingSystem() != null) {</span>
@@ -185,11 +185,11 @@ public class UserAgentDetector {
 <span class="fc" id="L185">                osName = result.getOperatingSystem().getName();</span>
 <span class="fc" id="L186">                osProducer = result.getOperatingSystem().getProducer();</span>
 <span class="pc bpc" id="L187" title="1 of 2 branches missed.">                osVersion = result.getOperatingSystem().getVersionNumber() != null ?</span>
-                        result.getOperatingSystem().getVersionNumber().toVersionString() : null;
+<span class="pc" id="L188">                        result.getOperatingSystem().getVersionNumber().toVersionString() : null;</span>
             }
 <span class="fc" id="L190">            UserAgentType userAgentType = toUserAgentType(result.getType());</span>
 <span class="pc bpc" id="L191" title="1 of 2 branches missed.">            String userAgentVersion = result.getVersionNumber() != null ?</span>
-                    result.getVersionNumber().toVersionString() : null;
+<span class="pc" id="L192">                    result.getVersionNumber().toVersionString() : null;</span>
             
 <span class="fc" id="L194">            return new UserAgentData(userAgentString, deviceCategory, </span>
                     deviceCategoryName, family, osFamily, osFamilyName, osName,
@@ -219,9 +219,9 @@ public class UserAgentDetector {
      * be created.
      */
     protected static synchronized void reset() {
-<span class="pc bpc" id="L222" title="1 of 2 branches missed.">        UserAgentDetector detector = mReference != null ? </span>
-                mReference.get() : null;
-<span class="pc bpc" id="L224" title="1 of 2 branches missed.">        if (detector != null) {</span>
+<span class="fc bfc" id="L222" title="All 2 branches covered.">        UserAgentDetector detector = mReference != null ? </span>
+<span class="fc" id="L223">                mReference.get() : null;</span>
+<span class="fc bfc" id="L224" title="All 2 branches covered.">        if (detector != null) {</span>
 <span class="fc" id="L225">            detector.close();</span>
         }
 <span class="fc" id="L227">        mReference = null;</span>
@@ -235,12 +235,12 @@ public class UserAgentDetector {
     @Override
     protected void finalize() throws Throwable {
         try {
-<span class="nc" id="L238">            close();</span>
+<span class="fc" id="L238">            close();</span>
 <span class="nc" id="L239">        } catch (Throwable ignore) {</span>
         } finally {
-<span class="nc" id="L241">            super.finalize();</span>
-<span class="nc" id="L242">        }</span>
-<span class="nc" id="L243">    }</span>
+<span class="fc" id="L241">            super.finalize();</span>
+        }
+<span class="fc" id="L243">    }</span>
     
     /**
      * Converts an internal device category enumerator into a DeviceCategory 
@@ -411,4 +411,4 @@ public class UserAgentDetector {
 <span class="nc" id="L411">        return null;</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

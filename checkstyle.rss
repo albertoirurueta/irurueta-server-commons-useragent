@@ -23,7 +23,7 @@ under the License.
     <link>https://github.com/albertoirurueta/irurueta-server-commons-useragent</link>
     <description>com.irurueta:irurueta-server-commons-useragent - Checkstyle report</description>
     <language>en-us</language>
-    <copyright>&#169;2016</copyright>
+    <copyright>&#169;2016 - 2020</copyright>
     <item>
       <title>File: 13,
              Errors: 27,
@@ -46,6 +46,76 @@ under the License.
           <tbody>
                           <tr>
                 <td>
+                  <a href="https://github.com/albertoirurueta/irurueta-server-commons-useragent/checkstyle.html#com.irurueta.server.commons.useragent.package-info.java">com/irurueta/server/commons/useragent/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/albertoirurueta/irurueta-server-commons-useragent/checkstyle.html#com.irurueta.server.commons.useragent.build-info.properties">com/irurueta/server/commons/useragent/build-info.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/albertoirurueta/irurueta-server-commons-useragent/checkstyle.html#com.irurueta.server.commons.useragent.UserAgentData.java">com/irurueta/server/commons/useragent/UserAgentData.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/albertoirurueta/irurueta-server-commons-useragent/checkstyle.html#com.irurueta.server.commons.useragent.UserAgentConfiguration.java">com/irurueta/server/commons/useragent/UserAgentConfiguration.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/albertoirurueta/irurueta-server-commons-useragent/checkstyle.html#com.irurueta.server.commons.useragent.DeviceCategory.java">com/irurueta/server/commons/useragent/DeviceCategory.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/albertoirurueta/irurueta-server-commons-useragent/checkstyle.html#com.irurueta.server.commons.useragent.UserAgentDetector.java">com/irurueta/server/commons/useragent/UserAgentDetector.java</a>
                 </td>
                 <td>
@@ -60,35 +130,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/albertoirurueta/irurueta-server-commons-useragent/checkstyle.html#com.irurueta.server.commons.useragent.UserAgentConfigurationFactory.java">com/irurueta/server/commons/useragent/UserAgentConfigurationFactory.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  4
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/albertoirurueta/irurueta-server-commons-useragent/checkstyle.html#com.irurueta.server.commons.useragent.UserAgentDetectionDisabledException.java">com/irurueta/server/commons/useragent/UserAgentDetectionDisabledException.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/albertoirurueta/irurueta-server-commons-useragent/checkstyle.html#com.irurueta.server.commons.useragent.UserAgentConfiguration.java">com/irurueta/server/commons/useragent/UserAgentConfiguration.java</a>
                 </td>
                 <td>
                   0
@@ -130,63 +172,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/albertoirurueta/irurueta-server-commons-useragent/checkstyle.html#com.irurueta.server.commons.useragent.package-info.java">com/irurueta/server/commons/useragent/package-info.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/albertoirurueta/irurueta-server-commons-useragent/checkstyle.html#com.irurueta.server.commons.useragent.UserAgentType.java">com/irurueta/server/commons/useragent/UserAgentType.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/albertoirurueta/irurueta-server-commons-useragent/checkstyle.html#com.irurueta.server.commons.useragent.build-info.properties">com/irurueta/server/commons/useragent/build-info.properties</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/albertoirurueta/irurueta-server-commons-useragent/checkstyle.html#com.irurueta.server.commons.useragent.DeviceCategory.java">com/irurueta/server/commons/useragent/DeviceCategory.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/albertoirurueta/irurueta-server-commons-useragent/checkstyle.html#com.irurueta.server.commons.useragent.OperatingSystemFamily.java">com/irurueta/server/commons/useragent/OperatingSystemFamily.java</a>
                 </td>
                 <td>
                   0
@@ -214,7 +200,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/albertoirurueta/irurueta-server-commons-useragent/checkstyle.html#com.irurueta.server.commons.useragent.UserAgentData.java">com/irurueta/server/commons/useragent/UserAgentData.java</a>
+                  <a href="https://github.com/albertoirurueta/irurueta-server-commons-useragent/checkstyle.html#com.irurueta.server.commons.useragent.OperatingSystemFamily.java">com/irurueta/server/commons/useragent/OperatingSystemFamily.java</a>
                 </td>
                 <td>
                   0
@@ -223,7 +209,21 @@ under the License.
                   0
                 </td>
                 <td>
-                  1
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/albertoirurueta/irurueta-server-commons-useragent/checkstyle.html#com.irurueta.server.commons.useragent.UserAgentConfigurationFactory.java">com/irurueta/server/commons/useragent/UserAgentConfigurationFactory.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  4
                 </td>
               </tr>
                       </tbody>
