@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="877801e1-7b56-472d-ae26-dd80a0ecd6c1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/sonar-project.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_irurueta_irurueta_server_commons_1_0_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_irurueta_irurueta_server_commons_1_0_SNAPSHOT.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_2_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_15_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cd/before-deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/cd/before-deploy.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cd/codesigning.asc.enc" beforeDir="false" afterPath="$PROJECT_DIR$/cd/codesigning.asc.enc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/irurueta-server-commons-useragent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/irurueta-server-commons-useragent.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
@@ -254,7 +248,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1462654709122</updated>
-      <workItem from="1602938388152" duration="615000" />
+      <workItem from="1602938388152" duration="970000" />
     </task>
     <servers />
   </component>
@@ -273,6 +267,28 @@
     <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
       <collection />
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1494" height="246" key="GridCell.Tab.0.bottom" timestamp="1602939370778">
+      <screen x="0" y="23" width="1536" height="937" />
+    </state>
+    <state width="1494" height="246" key="GridCell.Tab.0.bottom/0.23.1536.937@0.23.1536.937" timestamp="1602939370778" />
+    <state width="1494" height="246" key="GridCell.Tab.0.center" timestamp="1602939370777">
+      <screen x="0" y="23" width="1536" height="937" />
+    </state>
+    <state width="1494" height="246" key="GridCell.Tab.0.center/0.23.1536.937@0.23.1536.937" timestamp="1602939370777" />
+    <state width="1494" height="246" key="GridCell.Tab.0.left" timestamp="1602939370777">
+      <screen x="0" y="23" width="1536" height="937" />
+    </state>
+    <state width="1494" height="246" key="GridCell.Tab.0.left/0.23.1536.937@0.23.1536.937" timestamp="1602939370777" />
+    <state width="1494" height="246" key="GridCell.Tab.0.right" timestamp="1602939370778">
+      <screen x="0" y="23" width="1536" height="937" />
+    </state>
+    <state width="1494" height="246" key="GridCell.Tab.0.right/0.23.1536.937@0.23.1536.937" timestamp="1602939370778" />
+    <state x="420" y="240" width="598" height="490" key="find.popup" timestamp="1602939173935">
+      <screen x="0" y="23" width="1536" height="937" />
+    </state>
+    <state x="420" y="240" width="598" height="490" key="find.popup/0.23.1536.937@0.23.1536.937" timestamp="1602939173935" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
