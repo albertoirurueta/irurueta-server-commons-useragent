@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="877801e1-7b56-472d-ae26-dd80a0ecd6c1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_2_0_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_15_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/irurueta-server-commons-useragent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/irurueta-server-commons-useragent.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,13 +149,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -248,7 +247,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1462654709122</updated>
-      <workItem from="1602938388152" duration="970000" />
+      <workItem from="1602938388152" duration="1068000" />
+      <workItem from="1602944678551" duration="832000" />
     </task>
     <servers />
   </component>
@@ -269,22 +269,22 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1494" height="246" key="GridCell.Tab.0.bottom" timestamp="1602939370778">
+    <state width="1494" height="246" key="GridCell.Tab.0.bottom" timestamp="1602939489271">
       <screen x="0" y="23" width="1536" height="937" />
     </state>
-    <state width="1494" height="246" key="GridCell.Tab.0.bottom/0.23.1536.937@0.23.1536.937" timestamp="1602939370778" />
-    <state width="1494" height="246" key="GridCell.Tab.0.center" timestamp="1602939370777">
+    <state width="1494" height="246" key="GridCell.Tab.0.bottom/0.23.1536.937@0.23.1536.937" timestamp="1602939489271" />
+    <state width="1494" height="246" key="GridCell.Tab.0.center" timestamp="1602939489270">
       <screen x="0" y="23" width="1536" height="937" />
     </state>
-    <state width="1494" height="246" key="GridCell.Tab.0.center/0.23.1536.937@0.23.1536.937" timestamp="1602939370777" />
-    <state width="1494" height="246" key="GridCell.Tab.0.left" timestamp="1602939370777">
+    <state width="1494" height="246" key="GridCell.Tab.0.center/0.23.1536.937@0.23.1536.937" timestamp="1602939489270" />
+    <state width="1494" height="246" key="GridCell.Tab.0.left" timestamp="1602939489270">
       <screen x="0" y="23" width="1536" height="937" />
     </state>
-    <state width="1494" height="246" key="GridCell.Tab.0.left/0.23.1536.937@0.23.1536.937" timestamp="1602939370777" />
-    <state width="1494" height="246" key="GridCell.Tab.0.right" timestamp="1602939370778">
+    <state width="1494" height="246" key="GridCell.Tab.0.left/0.23.1536.937@0.23.1536.937" timestamp="1602939489270" />
+    <state width="1494" height="246" key="GridCell.Tab.0.right" timestamp="1602939489271">
       <screen x="0" y="23" width="1536" height="937" />
     </state>
-    <state width="1494" height="246" key="GridCell.Tab.0.right/0.23.1536.937@0.23.1536.937" timestamp="1602939370778" />
+    <state width="1494" height="246" key="GridCell.Tab.0.right/0.23.1536.937@0.23.1536.937" timestamp="1602939489271" />
     <state x="420" y="240" width="598" height="490" key="find.popup" timestamp="1602939173935">
       <screen x="0" y="23" width="1536" height="937" />
     </state>
