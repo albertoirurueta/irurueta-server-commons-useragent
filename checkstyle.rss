@@ -23,10 +23,10 @@ under the License.
     <link>https://github.com/albertoirurueta/irurueta-server-commons-useragent</link>
     <description>com.irurueta:irurueta-server-commons-useragent - Checkstyle report</description>
     <language>en-us</language>
-    <copyright>&#169;2016 - 2020</copyright>
+    <copyright>&#169;2016 - 2021</copyright>
     <item>
       <title>File: 13,
-             Errors: 27,
+             Errors: 259,
              Warnings: 0,
              Infos: 0
       </title>
@@ -125,7 +125,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  11
+                  244
                 </td>
               </tr>
                           <tr>
@@ -223,7 +223,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  4
+                  3
                 </td>
               </tr>
                       </tbody>
