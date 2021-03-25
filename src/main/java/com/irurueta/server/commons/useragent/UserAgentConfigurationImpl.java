@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2016 Alberto Irurueta Carro (alberto@irurueta.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -104,13 +104,13 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
     public final void fromProperties(Properties properties) 
             throws ConfigurationException {
         try {
-            mUserAgentDetectionEnabled = Boolean.valueOf(properties.getProperty(
+            mUserAgentDetectionEnabled = Boolean.parseBoolean(properties.getProperty(
                     UserAgentConfigurationFactory.
                     USER_AGENT_DETECTION_ENABLED_PROPERTY, Boolean.toString(
                     UserAgentConfigurationFactory.
                     DEFAULT_USER_AGENT_DETECTION_ENABLED)));
             
-            mUserAgentCacheSize = Integer.valueOf(properties.getProperty(
+            mUserAgentCacheSize = Integer.parseInt(properties.getProperty(
                     UserAgentConfigurationFactory.
                     USER_AGENT_CACHE_SIZE_PROPERTY, Integer.toString(
                     UserAgentConfigurationFactory.
@@ -121,7 +121,7 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
                         "User agent cache size must be positive");
             }
             
-            mUserAgentCacheExpirationTimeHours = Integer.valueOf(properties.
+            mUserAgentCacheExpirationTimeHours = Integer.parseInt(properties.
                     getProperty(UserAgentConfigurationFactory.
                     USER_AGENT_CACHE_EXPIRATION_TIME_HOURS_PROPERTY, Integer.
                     toString(UserAgentConfigurationFactory.
@@ -133,8 +133,8 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
             }
         } catch(ConfigurationException e) {
             throw e;
-        } catch(Throwable t) {
-            throw new ConfigurationException(t);
+        } catch(Exception e) {
+            throw new ConfigurationException(e);
         }
     }
 

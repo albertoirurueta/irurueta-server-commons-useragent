@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2016 Alberto Irurueta Carro (alberto@irurueta.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,6 @@ package com.irurueta.server.commons.useragent;
 
 import com.irurueta.server.commons.configuration.BaseConfigurationFactory;
 import com.irurueta.server.commons.configuration.ConfigurationException;
-import java.lang.ref.SoftReference;
 import java.util.Properties;
 
 /**

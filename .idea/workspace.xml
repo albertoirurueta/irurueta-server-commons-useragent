@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="877801e1-7b56-472d-ae26-dd80a0ecd6c1" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_irurueta_irurueta_server_commons_1_0_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_irurueta_irurueta_server_commons_1_0_SNAPSHOT.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/irurueta-server-commons-useragent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/irurueta-server-commons-useragent.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/BuildInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/BuildInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/DeviceCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/DeviceCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/OperatingSystemFamily.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/OperatingSystemFamily.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentConfigurationFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentConfigurationFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentConfigurationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentConfigurationImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentDetectionDisabledException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentDetectionDisabledException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentDetector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/package-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,13 +31,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="ProjectId" id="1j0QAfpiHQGLAoI8CS0djsR8jWA" />
   <component name="ProjectViewState">
@@ -42,6 +48,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -149,19 +158,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in irurueta-server-commons-useragent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="irurueta-server-commons-useragent" />
       <option name="PACKAGE_NAME" value="" />
@@ -249,6 +245,7 @@
       <updated>1462654709122</updated>
       <workItem from="1602938388152" duration="1068000" />
       <workItem from="1602944678551" duration="832000" />
+      <workItem from="1616706997739" duration="1815000" />
     </task>
     <servers />
   </component>
@@ -267,28 +264,6 @@
     <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
       <collection />
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1494" height="246" key="GridCell.Tab.0.bottom" timestamp="1602939489271">
-      <screen x="0" y="23" width="1536" height="937" />
-    </state>
-    <state width="1494" height="246" key="GridCell.Tab.0.bottom/0.23.1536.937@0.23.1536.937" timestamp="1602939489271" />
-    <state width="1494" height="246" key="GridCell.Tab.0.center" timestamp="1602939489270">
-      <screen x="0" y="23" width="1536" height="937" />
-    </state>
-    <state width="1494" height="246" key="GridCell.Tab.0.center/0.23.1536.937@0.23.1536.937" timestamp="1602939489270" />
-    <state width="1494" height="246" key="GridCell.Tab.0.left" timestamp="1602939489270">
-      <screen x="0" y="23" width="1536" height="937" />
-    </state>
-    <state width="1494" height="246" key="GridCell.Tab.0.left/0.23.1536.937@0.23.1536.937" timestamp="1602939489270" />
-    <state width="1494" height="246" key="GridCell.Tab.0.right" timestamp="1602939489271">
-      <screen x="0" y="23" width="1536" height="937" />
-    </state>
-    <state width="1494" height="246" key="GridCell.Tab.0.right/0.23.1536.937@0.23.1536.937" timestamp="1602939489271" />
-    <state x="420" y="240" width="598" height="490" key="find.popup" timestamp="1602939173935">
-      <screen x="0" y="23" width="1536" height="937" />
-    </state>
-    <state x="420" y="240" width="598" height="490" key="find.popup/0.23.1536.937@0.23.1536.937" timestamp="1602939173935" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
