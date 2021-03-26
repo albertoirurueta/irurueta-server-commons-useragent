@@ -15,7 +15,6 @@
  */
 package com.irurueta.server.commons.useragent;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.lang.ref.SoftReference;
 import java.text.SimpleDateFormat;
@@ -127,11 +126,8 @@ public final class BuildInfo {
      * Constructor.
      */
     private BuildInfo() {
-        //loads properties file data
-        InputStream stream = null;
-        try {
-            stream = BuildInfo.class.getResourceAsStream(BUILD_INFO_PROPERTIES);
-
+        // loads properties file data
+        try (final InputStream stream = BuildInfo.class.getResourceAsStream(BUILD_INFO_PROPERTIES)) {
             final Properties props = new Properties();
             props.load(stream);
 
@@ -149,15 +145,6 @@ public final class BuildInfo {
             mBranch = props.getProperty(BRANCH_KEY);
         } catch (final Exception e) {
             LOGGER.log(Level.WARNING, "Failed to load build info", e);
-        } finally {
-            if (stream != null) {
-                try {
-                    stream.close();
-                } catch (IOException e) {
-                    LOGGER.log(Level.WARNING, "Could not properly close stream",
-                            e);
-                }
-            }
         }
     }
 
