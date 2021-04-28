@@ -89,20 +89,20 @@ public class UserAgentConfigurationFactory extends
      * @throws ConfigurationException if any property value was invalid.
      */
     @Override
-    public UserAgentConfiguration configure(Properties properties) 
+    public UserAgentConfiguration configure(final Properties properties)
             throws ConfigurationException {
 <span class="fc bfc" id="L94" title="All 2 branches covered.">        if (mConfiguration != null) {</span>
 <span class="fc" id="L95">            return mConfiguration;</span>
         }
         
 <span class="fc bfc" id="L98" title="All 2 branches covered.">        if (properties == null) {</span>
-            //use default configuration
+            // use default configuration
 <span class="fc" id="L100">            mConfiguration = new UserAgentConfigurationImpl();</span>
         } else {
 <span class="fc" id="L102">            mConfiguration = new UserAgentConfigurationImpl(properties);</span>
         }
         
-        //configure user agent detector
+        // configure user agent detector
 <span class="fc" id="L106">        UserAgentDetector.getInstance();</span>
         
 <span class="fc" id="L108">        return mConfiguration;</span>
@@ -118,7 +118,7 @@ public class UserAgentConfigurationFactory extends
     @Override
     public synchronized BaseConfigurationFactory&lt;UserAgentConfiguration&gt; reset()
             throws ConfigurationException {
-        //reset user agent detector
+        // reset user agent detector
 <span class="fc" id="L122">        UserAgentDetector.reset();</span>
 <span class="fc" id="L123">        mConfiguration = null;</span>
 <span class="fc" id="L124">        return super.reset();</span>

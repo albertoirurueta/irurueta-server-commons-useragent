@@ -58,7 +58,7 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
      * @param properties properties containing configuration.
      * @throws ConfigurationException if any property value is invalid.
      */
-    public UserAgentConfigurationImpl(Properties properties) 
+    public UserAgentConfigurationImpl(final Properties properties)
 <span class="fc" id="L62">            throws ConfigurationException {</span>
 <span class="fc" id="L63">        fromProperties(properties);</span>
 <span class="fc" id="L64">    }</span>
@@ -101,7 +101,7 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
      * @throws ConfigurationException if any properties value is invalid.
      */
     @Override
-    public final void fromProperties(Properties properties) 
+    public final void fromProperties(final Properties properties)
             throws ConfigurationException {
         try {
 <span class="fc" id="L107">            mUserAgentDetectionEnabled = Boolean.parseBoolean(properties.getProperty(</span>
@@ -131,9 +131,9 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
 <span class="fc" id="L131">                throw new ConfigurationException(&quot;User agent cache &quot; + </span>
                         &quot;expiration time must be positive&quot;);
             }
-<span class="fc" id="L134">        } catch(ConfigurationException e) {</span>
+<span class="fc" id="L134">        } catch(final ConfigurationException e) {</span>
 <span class="fc" id="L135">            throw e;</span>
-<span class="fc" id="L136">        } catch(Exception e) {</span>
+<span class="fc" id="L136">        } catch(final Exception e) {</span>
 <span class="fc" id="L137">            throw new ConfigurationException(e);</span>
 <span class="fc" id="L138">        }</span>
 <span class="fc" id="L139">    }</span>
@@ -144,7 +144,7 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
      */
     @Override
     public Properties toProperties() {
-<span class="fc" id="L147">        Properties properties = new Properties();</span>
+<span class="fc" id="L147">        final Properties properties = new Properties();</span>
 <span class="fc" id="L148">        properties.setProperty(UserAgentConfigurationFactory.</span>
 <span class="fc" id="L149">                USER_AGENT_DETECTION_ENABLED_PROPERTY, Boolean.toString(mUserAgentDetectionEnabled));</span>
 <span class="fc" id="L150">        properties.setProperty(UserAgentConfigurationFactory.</span>

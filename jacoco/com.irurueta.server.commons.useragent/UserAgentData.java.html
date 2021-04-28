@@ -96,11 +96,11 @@ public class UserAgentData {
      * @param userAgentVersion version of user agent (i.e. browser version, 
      * etc).
      */
-    public UserAgentData(String userAgent, DeviceCategory deviceCategory,
-            String deviceCategoryName, String family, 
-            OperatingSystemFamily osFamily, String osFamilyName, String osName, 
-            String osProducer, String osVersion, UserAgentType userAgentType,
-<span class="fc" id="L103">            String userAgentVersion) {</span>
+    public UserAgentData(final String userAgent, final DeviceCategory deviceCategory,
+            final String deviceCategoryName, final String family,
+            final OperatingSystemFamily osFamily, final String osFamilyName, final String osName,
+            final String osProducer, final String osVersion, final UserAgentType userAgentType,
+<span class="fc" id="L103">            final String userAgentVersion) {</span>
 <span class="fc" id="L104">        mUserAgent = userAgent;</span>
 <span class="fc" id="L105">        mDeviceCategory = deviceCategory;</span>
 <span class="fc" id="L106">        mDeviceCategoryName = deviceCategoryName;</span>
@@ -126,64 +126,68 @@ public class UserAgentData {
      * Sets original user agent string.
      * @param userAgent original user agent string to be set.
      */
-    protected void setUserAgent(String userAgent) {
-<span class="fc" id="L130">        this.mUserAgent = userAgent;</span>
-<span class="fc" id="L131">    }</span>
+    @SuppressWarnings(&quot;SameParameterValue&quot;)
+    protected void setUserAgent(final String userAgent) {
+<span class="fc" id="L131">        this.mUserAgent = userAgent;</span>
+<span class="fc" id="L132">    }</span>
     
     /**
      * Returns detected device category based on user agent string.
      * @return detected device category.
      */
     public DeviceCategory getDeviceCategory() {
-<span class="fc" id="L138">        return mDeviceCategory;</span>
+<span class="fc" id="L139">        return mDeviceCategory;</span>
     }
 
     /**
      * Sets detected device category based on user agent string.
      * @param deviceCategory device category to be set.
      */
-    protected void setDeviceCategory(DeviceCategory deviceCategory) {
-<span class="fc" id="L146">        this.mDeviceCategory = deviceCategory;</span>
-<span class="fc" id="L147">    }</span>
+    @SuppressWarnings(&quot;SameParameterValue&quot;)
+    protected void setDeviceCategory(final DeviceCategory deviceCategory) {
+<span class="fc" id="L148">        this.mDeviceCategory = deviceCategory;</span>
+<span class="fc" id="L149">    }</span>
     
     /**
      * Returns detected device category name based on user agent string.
      * @return detected device category name based on user agent string.
      */
     public String getDeviceCategoryName() {
-<span class="fc" id="L154">        return mDeviceCategoryName;</span>
+<span class="fc" id="L156">        return mDeviceCategoryName;</span>
     }
     
     /**
      * Sets detected device category name based on user agent string.
      * @param deviceCategoryName device category name to be set.
      */
-    protected void setDeviceCategoryName(String deviceCategoryName) {
-<span class="fc" id="L162">        this.mDeviceCategoryName = deviceCategoryName;</span>
-<span class="fc" id="L163">    }</span>
+    @SuppressWarnings(&quot;SameParameterValue&quot;)
+    protected void setDeviceCategoryName(final String deviceCategoryName) {
+<span class="fc" id="L165">        this.mDeviceCategoryName = deviceCategoryName;</span>
+<span class="fc" id="L166">    }</span>
 
     /**
      * Returns detected user agent family based on user agent string.
      * @return detected user agent family based on user agent string.
      */
     public String getFamily() {
-<span class="fc" id="L170">        return mFamily;</span>
+<span class="fc" id="L173">        return mFamily;</span>
     }
     
     /**
      * Sets detected user agent family based on user agent string.
      * @param family user agent family to be set.
      */
-    protected void setFamily(String family) {
-<span class="fc" id="L178">        this.mFamily = family;</span>
-<span class="fc" id="L179">    }</span>
+    @SuppressWarnings(&quot;SameParameterValue&quot;)
+    protected void setFamily(final String family) {
+<span class="fc" id="L182">        this.mFamily = family;</span>
+<span class="fc" id="L183">    }</span>
 
     /**
      * Returns detected operating system family based on user agent string.
      * @return detected operating system family based on user agent string.
      */
     public OperatingSystemFamily getOsFamily() {
-<span class="fc" id="L186">        return mOsFamily;</span>
+<span class="fc" id="L190">        return mOsFamily;</span>
     }
     
     /**
@@ -191,105 +195,111 @@ public class UserAgentData {
      * @param osFamily detected operating system fmaily based on user agent
      * string.
      */
-    protected void setOsFamily(OperatingSystemFamily osFamily) {
-<span class="fc" id="L195">        this.mOsFamily = osFamily;</span>
-<span class="fc" id="L196">    }</span>
+    @SuppressWarnings(&quot;SameParameterValue&quot;)
+    protected void setOsFamily(final OperatingSystemFamily osFamily) {
+<span class="fc" id="L200">        this.mOsFamily = osFamily;</span>
+<span class="fc" id="L201">    }</span>
 
     /**
      * Returns detected operating system family name based on user agent string.
      * @return detected operating system family name based on user agent string.
      */
     public String getOsFamilyName() {
-<span class="fc" id="L203">        return mOsFamilyName;</span>
+<span class="fc" id="L208">        return mOsFamilyName;</span>
     }
     
     /**
      * Sets detected operating system family name based on user agent string.
      * @param osFamilyName operating system family name to be set.
      */
-    protected void setOsFamilyName(String osFamilyName) {
-<span class="fc" id="L211">        this.mOsFamilyName = osFamilyName;</span>
-<span class="fc" id="L212">    }</span>
+    @SuppressWarnings(&quot;SameParameterValue&quot;)
+    protected void setOsFamilyName(final String osFamilyName) {
+<span class="fc" id="L217">        this.mOsFamilyName = osFamilyName;</span>
+<span class="fc" id="L218">    }</span>
 
     /**
      * Returns detected operating system name based on user agent string.
      * @return detected operating system name based on user agent string.
      */
     public String getOsName() {
-<span class="fc" id="L219">        return mOsName;</span>
+<span class="fc" id="L225">        return mOsName;</span>
     }
     
     /**
      * Sets detected operating system name based on user agent string.
      * @param osName operating system name to be set.
      */
-    protected void setOsName(String osName) {
-<span class="fc" id="L227">        this.mOsName = osName;</span>
-<span class="fc" id="L228">    }</span>
+    @SuppressWarnings(&quot;SameParameterValue&quot;)
+    protected void setOsName(final String osName) {
+<span class="fc" id="L234">        this.mOsName = osName;</span>
+<span class="fc" id="L235">    }</span>
 
     /**
      * Returns detected operating system producer based on user agent string.
      * @return detected operating system producer based on user agent string.
      */
     public String getOsProducer() {
-<span class="fc" id="L235">        return mOsProducer;</span>
+<span class="fc" id="L242">        return mOsProducer;</span>
     }
     
     /**
      * Sets detected operating system producer based on user agent string.
      * @param osProducer operating system producer to be set.
      */
-    protected void setOsProducer(String osProducer) {
-<span class="fc" id="L243">        this.mOsProducer = osProducer;</span>
-<span class="fc" id="L244">    }</span>
+    @SuppressWarnings(&quot;SameParameterValue&quot;)
+    protected void setOsProducer(final String osProducer) {
+<span class="fc" id="L251">        this.mOsProducer = osProducer;</span>
+<span class="fc" id="L252">    }</span>
 
     /**
      * Returns detected operating system version based on user agent string.
      * @return detected operating system version based on user agent string.
      */
     public String getOsVersion() {
-<span class="fc" id="L251">        return mOsVersion;</span>
+<span class="fc" id="L259">        return mOsVersion;</span>
     }
     
     /**
      * Sets detected operating system version based on user agent string.
      * @param osVersion operating system version to be set.
      */
-    protected void setOsVersion(String osVersion) {
-<span class="fc" id="L259">        this.mOsVersion = osVersion;</span>
-<span class="fc" id="L260">    }</span>
+    @SuppressWarnings(&quot;SameParameterValue&quot;)
+    protected void setOsVersion(final String osVersion) {
+<span class="fc" id="L268">        this.mOsVersion = osVersion;</span>
+<span class="fc" id="L269">    }</span>
 
     /**
      * Returns detected user agent type.
      * @return detected user agent type.
      */
     public UserAgentType getUserAgentType() {
-<span class="fc" id="L267">        return mUserAgentType;</span>
+<span class="fc" id="L276">        return mUserAgentType;</span>
     }
     
     /**
      * Sets detected user agent type.
      * @param userAgentType user agent type to be set.
      */
-    protected void setUserAgentType(UserAgentType userAgentType) {
-<span class="fc" id="L275">        this.mUserAgentType = userAgentType;</span>
-<span class="fc" id="L276">    }</span>
+    @SuppressWarnings(&quot;SameParameterValue&quot;)
+    protected void setUserAgentType(final UserAgentType userAgentType) {
+<span class="fc" id="L285">        this.mUserAgentType = userAgentType;</span>
+<span class="fc" id="L286">    }</span>
     
     /**
      * Returns version of user agent (i.e. browser version, etc).
      * @return version of user agent.
      */
     public String getUserAgentVersion() {
-<span class="fc" id="L283">        return mUserAgentVersion;</span>
+<span class="fc" id="L293">        return mUserAgentVersion;</span>
     }
     
     /**
      * Sets version of user agent (i.e. browser version, etc).
      * @param userAgentVersion version of user agent to be set.
      */
-    public void setUserAgentVersion(String userAgentVersion) {
-<span class="fc" id="L291">        this.mUserAgentVersion = userAgentVersion;</span>
-<span class="fc" id="L292">    }</span>
+    public void setUserAgentVersion(final String userAgentVersion) {
+<span class="fc" id="L301">        this.mUserAgentVersion = userAgentVersion;</span>
+<span class="fc" id="L302">    }</span>
     
     /**
      * Indicates if detected user agent data corresponds to a desktop
@@ -299,7 +309,7 @@ public class UserAgentData {
      * browser or email client.
      */
     public boolean isDesktop() {
-<span class="fc" id="L302">        return isDesktop(mUserAgentType, mDeviceCategory);</span>
+<span class="fc" id="L312">        return isDesktop(mUserAgentType, mDeviceCategory);</span>
     }
     
     /**
@@ -311,7 +321,7 @@ public class UserAgentData {
      * email client.
      */
     public boolean isMobile() {
-<span class="fc" id="L314">        return isMobile(mUserAgentType, mDeviceCategory);</span>
+<span class="fc" id="L324">        return isMobile(mUserAgentType, mDeviceCategory);</span>
     }
     
     /**
@@ -324,7 +334,7 @@ public class UserAgentData {
      * email client.
      */
     public boolean isTablet() {
-<span class="fc" id="L327">        return isTablet(mUserAgentType, mDeviceCategory);</span>
+<span class="fc" id="L337">        return isTablet(mUserAgentType, mDeviceCategory);</span>
     }
     
     /**
@@ -335,7 +345,7 @@ public class UserAgentData {
      * client.
      */
     public boolean isSmartTV() {
-<span class="fc" id="L338">        return isSmartTV(mUserAgentType, mDeviceCategory);</span>
+<span class="fc" id="L348">        return isSmartTV(mUserAgentType, mDeviceCategory);</span>
     }
     
     /**
@@ -349,16 +359,16 @@ public class UserAgentData {
      * @return true if user agent appears to belong to a desktop web
      * browser or email client.
      */
-    public static boolean isDesktop(UserAgentType userAgentType, 
-            DeviceCategory deviceCategory) {
-<span class="fc bfc" id="L354" title="All 10 branches covered.">        return (userAgentType == UserAgentType.BROWSER || </span>
+    public static boolean isDesktop(final UserAgentType userAgentType,
+            final DeviceCategory deviceCategory) {
+<span class="fc bfc" id="L364" title="All 10 branches covered.">        return (userAgentType == UserAgentType.BROWSER || </span>
                 userAgentType == UserAgentType.EMAIL_CLIENT) &amp;&amp;
                 (deviceCategory == DeviceCategory.OTHER ||
                 deviceCategory == DeviceCategory.PERSONAL_COMPUTER ||
                 deviceCategory == DeviceCategory.UNKNOWN) || 
-<span class="fc bfc" id="L359" title="All 2 branches covered.">                (!isMobile(userAgentType, deviceCategory) &amp;&amp; </span>
-<span class="fc bfc" id="L360" title="All 2 branches covered.">                !isTablet(userAgentType, deviceCategory) &amp;&amp; </span>
-<span class="pc bpc" id="L361" title="1 of 2 branches missed.">                !isSmartTV(userAgentType, deviceCategory)) ;</span>
+<span class="fc bfc" id="L369" title="All 2 branches covered.">                (!isMobile(userAgentType, deviceCategory) &amp;&amp; </span>
+<span class="fc bfc" id="L370" title="All 2 branches covered.">                !isTablet(userAgentType, deviceCategory) &amp;&amp; </span>
+<span class="pc bpc" id="L371" title="1 of 2 branches missed.">                !isSmartTV(userAgentType, deviceCategory)) ;</span>
     }
     
     /**
@@ -373,9 +383,9 @@ public class UserAgentData {
      * @return true if user agent appears to belong to a mobile web browser or
      * email client.
      */
-    public static boolean isMobile(UserAgentType userAgentType, 
-            DeviceCategory deviceCategory) {
-<span class="fc bfc" id="L378" title="All 12 branches covered.">        return (userAgentType == UserAgentType.BROWSER ||</span>
+    public static boolean isMobile(final UserAgentType userAgentType,
+            final DeviceCategory deviceCategory) {
+<span class="fc bfc" id="L388" title="All 12 branches covered.">        return (userAgentType == UserAgentType.BROWSER ||</span>
                 userAgentType == UserAgentType.EMAIL_CLIENT ||
                 userAgentType == UserAgentType.MOBILE_BROWSER) &amp;&amp;
                 (deviceCategory == DeviceCategory.PDA ||
@@ -396,9 +406,9 @@ public class UserAgentData {
      * @return true if user agent appears to belong to a tablet web browser or 
      * email client.
      */
-    public static boolean isTablet(UserAgentType userAgentType, 
-            DeviceCategory deviceCategory) {
-<span class="fc bfc" id="L401" title="All 8 branches covered.">        return (userAgentType == UserAgentType.BROWSER ||</span>
+    public static boolean isTablet(final UserAgentType userAgentType,
+            final DeviceCategory deviceCategory) {
+<span class="fc bfc" id="L411" title="All 8 branches covered.">        return (userAgentType == UserAgentType.BROWSER ||</span>
                 userAgentType == UserAgentType.EMAIL_CLIENT ||
                 userAgentType == UserAgentType.MOBILE_BROWSER) &amp;&amp;
                 (deviceCategory == DeviceCategory.TABLET);
@@ -416,9 +426,9 @@ public class UserAgentData {
      * @return true if user agent appears to belong to a TV web browser or email
      * client.
      */
-    public static boolean isSmartTV(UserAgentType userAgentType, 
-            DeviceCategory deviceCategory) {
-<span class="fc bfc" id="L421" title="All 8 branches covered.">        return (userAgentType == UserAgentType.BROWSER ||</span>
+    public static boolean isSmartTV(final UserAgentType userAgentType,
+            final DeviceCategory deviceCategory) {
+<span class="fc bfc" id="L431" title="All 8 branches covered.">        return (userAgentType == UserAgentType.BROWSER ||</span>
                 userAgentType == UserAgentType.EMAIL_CLIENT ||
                 userAgentType == UserAgentType.MOBILE_BROWSER) &amp;&amp;
                 (deviceCategory == DeviceCategory.SMART_TV);
