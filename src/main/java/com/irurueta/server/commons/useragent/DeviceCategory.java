@@ -22,55 +22,55 @@ package com.irurueta.server.commons.useragent;
 public enum DeviceCategory {
     /**
      * A game console is an interactive compute that produces a video display
-     * signal which can be used with a display device (a television, monitor, 
+     * signal which can be used with a display device (a television, monitor,
      * etc.) to display a video game.
      */
     GAME_CONSOLE,
-    
+
     /**
      * A personal digital assistant (PDA), also known as a palmtop computer, or
      * personal data assistant, is a mobile device that functions as a personal
      * information manager.
      */
     PDA,
-    
+
     /**
-     * A personal computer (PC) is a general-purpose computer, whose size, 
-     * capabilities, and original sale price makes it useful for individuals, 
-     * and which is intended to be operated directly by an end-user with no 
+     * A personal computer (PC) is a general-purpose computer, whose size,
+     * capabilities, and original sale price makes it useful for individuals,
+     * and which is intended to be operated directly by an end-user with no
      * intervening computer operator.
      */
     PERSONAL_COMPUTER,
-    
+
     /**
      * A smart TV, sometimes referred to as connected TV or hybrid TV.
      */
     SMART_TV,
-    
+
     /**
      * A smartphone is a mobile phone build on a mobile operating system, with
      * more advanced computing capability and connectivity than a feature phone.
      */
     SMARTPHONE,
-    
+
     /**
      * A tablet computer, or simply tablet, is a mobile computer with display,
      * circuitry and battery in a single unit.
      */
     TABLET,
-    
+
     /**
-     * Wearable computers, also known as body-borne computers are miniature 
+     * Wearable computers, also known as body-borne computers are miniature
      * electronic devices that are worn by the bearer under, with or on top of
      * clothing.
      */
     WEARABLE_COMPUTER,
-    
+
     /**
      * A device that doesn't match the other categories.
      */
     OTHER,
-    
+
     /**
      * An unknown device category.
      */

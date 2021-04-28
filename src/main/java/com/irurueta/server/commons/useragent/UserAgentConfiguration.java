@@ -23,22 +23,25 @@ import com.irurueta.server.commons.configuration.Configuration;
 public interface UserAgentConfiguration extends Configuration {
     /**
      * Indicates whether user agent detection is enabled or not.
+     *
      * @return true if user agent detection is enabled, false otherwise.
      */
     boolean isUserAgentDetectionEnabled();
-    
+
     /**
      * Returns amount of user agents that are cached.
      * A cache of user agents is used to speed up the parsing process when
      * user agents get repeated, which can happen if a user makes several
      * requests to the server, or multiple users have the same user agent.
+     *
      * @return amount of user agents that are cached.
      */
     int getUserAgentCacheSize();
-    
+
     /**
      * Returns maximum amount of time to keep user agents cached expressed
      * in hours.
+     *
      * @return maximum amount of time to keep user agents cached expressed
      * in hours.
      */

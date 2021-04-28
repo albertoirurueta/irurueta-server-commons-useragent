@@ -16,41 +16,44 @@
 package com.irurueta.server.commons.useragent;
 
 /**
- * Exception raised if attempting to detect a user agent when user agent 
+ * Exception raised if attempting to detect a user agent when user agent
  * detection is disabled.
  */
 public class UserAgentDetectionDisabledException extends UserAgentException {
-    
+
     /**
      * Constructor.
      */
     public UserAgentDetectionDisabledException() {
         super();
     }
-    
+
     /**
      * Constructor with message.
+     *
      * @param message message describing the cause of the exception.
      */
-    public UserAgentDetectionDisabledException(String message) {
+    public UserAgentDetectionDisabledException(final String message) {
         super(message);
     }
-    
+
     /**
      * Constructor with message and cause.
+     *
      * @param message message describing the cause of the exception.
-     * @param cause originating exception that caused this exception. This can
-     * be used to obtain stack traces.
+     * @param cause   originating exception that caused this exception. This can
+     *                be used to obtain stack traces.
      */
-    public UserAgentDetectionDisabledException(String message, 
-            Throwable cause) {
+    public UserAgentDetectionDisabledException(final String message,
+                                               final Throwable cause) {
         super(message, cause);
     }
-    
+
     /**
      * Constructor with cause.
+     *
      * @param cause originating exception that caused this exception. This can
-     * be used to obtain stack traces.
+     *              be used to obtain stack traces.
      */
     public UserAgentDetectionDisabledException(Throwable cause) {
         super(cause);

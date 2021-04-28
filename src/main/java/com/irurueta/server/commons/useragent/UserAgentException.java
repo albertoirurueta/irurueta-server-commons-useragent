@@ -21,38 +21,41 @@ import com.irurueta.server.commons.ServerCommonsException;
  * Base class for this package. All exceptions in this package will inherit from
  * this one
  */
-public class UserAgentException extends ServerCommonsException{
+public class UserAgentException extends ServerCommonsException {
     /**
      * Constructor
      */
-    public UserAgentException(){
+    public UserAgentException() {
         super();
     }
-    
+
     /**
      * Constructor with message
+     *
      * @param message message describing the cause of the exception
      */
-    public UserAgentException(String message){
+    public UserAgentException(final String message) {
         super(message);
     }
-    
+
     /**
      * Constructor with message and cause
+     *
      * @param message message describing the cause of the exception
-     * @param cause originating exception that caused this exception. This can
-     * be used to obtain stack traces
+     * @param cause   originating exception that caused this exception. This can
+     *                be used to obtain stack traces
      */
-    public UserAgentException(String message, Throwable cause){
+    public UserAgentException(final String message, final Throwable cause) {
         super(message, cause);
     }
-    
+
     /**
      * Constructor with cause
+     *
      * @param cause originating exception that caused this exception. This can
-     * be used to obtain stack traces
+     *              be used to obtain stack traces
      */
-    public UserAgentException(Throwable cause){
+    public UserAgentException(final Throwable cause) {
         super(cause);
-    }    
+    }
 }

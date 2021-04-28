@@ -89,20 +89,20 @@ public class UserAgentConfigurationFactory extends
      * @throws ConfigurationException if any property value was invalid.
      */
     @Override
-    public UserAgentConfiguration configure(Properties properties) 
+    public UserAgentConfiguration configure(final Properties properties)
             throws ConfigurationException {
         if (mConfiguration != null) {
             return mConfiguration;
         }
         
         if (properties == null) {
-            //use default configuration
+            // use default configuration
             mConfiguration = new UserAgentConfigurationImpl();
         } else {
             mConfiguration = new UserAgentConfigurationImpl(properties);
         }
         
-        //configure user agent detector
+        // configure user agent detector
         UserAgentDetector.getInstance();
         
         return mConfiguration;
@@ -118,7 +118,7 @@ public class UserAgentConfigurationFactory extends
     @Override
     public synchronized BaseConfigurationFactory<UserAgentConfiguration> reset()
             throws ConfigurationException {
-        //reset user agent detector
+        // reset user agent detector
         UserAgentDetector.reset();
         mConfiguration = null;
         return super.reset();

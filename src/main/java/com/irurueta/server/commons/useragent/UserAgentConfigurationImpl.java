@@ -58,7 +58,7 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
      * @param properties properties containing configuration.
      * @throws ConfigurationException if any property value is invalid.
      */
-    public UserAgentConfigurationImpl(Properties properties) 
+    public UserAgentConfigurationImpl(final Properties properties)
             throws ConfigurationException {
         fromProperties(properties);
     }
@@ -101,7 +101,7 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
      * @throws ConfigurationException if any properties value is invalid.
      */
     @Override
-    public final void fromProperties(Properties properties) 
+    public final void fromProperties(final Properties properties)
             throws ConfigurationException {
         try {
             mUserAgentDetectionEnabled = Boolean.parseBoolean(properties.getProperty(
@@ -131,9 +131,9 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
                 throw new ConfigurationException("User agent cache " + 
                         "expiration time must be positive");
             }
-        } catch(ConfigurationException e) {
+        } catch(final ConfigurationException e) {
             throw e;
-        } catch(Exception e) {
+        } catch(final Exception e) {
             throw new ConfigurationException(e);
         }
     }
@@ -144,7 +144,7 @@ public class UserAgentConfigurationImpl implements UserAgentConfiguration {
      */
     @Override
     public Properties toProperties() {
-        Properties properties = new Properties();
+        final Properties properties = new Properties();
         properties.setProperty(UserAgentConfigurationFactory.
                 USER_AGENT_DETECTION_ENABLED_PROPERTY, Boolean.toString(mUserAgentDetectionEnabled));
         properties.setProperty(UserAgentConfigurationFactory.

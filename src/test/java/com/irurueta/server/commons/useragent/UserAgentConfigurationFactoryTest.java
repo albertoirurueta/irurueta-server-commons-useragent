@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2016 Alberto Irurueta Carro (alberto@irurueta.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,122 +16,106 @@
 package com.irurueta.server.commons.useragent;
 
 import com.irurueta.server.commons.configuration.ConfigurationException;
-import java.util.Properties;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.util.Properties;
+
 import static org.junit.Assert.*;
 
 public class UserAgentConfigurationFactoryTest {
-    public static boolean USER_AGENT_DETECTION_ENABLED = true;
-    public static int USER_AGENT_CACHE_SIZE = 200;
-    public static int USER_AGENT_CACHE_EXPIRATION_TIME = 3;
-    
-    public UserAgentConfigurationFactoryTest() {}
-    
-    @BeforeClass
-    public static void setUpClass() {}
-    
-    @AfterClass
-    public static void tearDownClass() {}
-    
-    @Before
-    public void setUp() {}
-    
-    @After
-    public void tearDown() {}
+    public static final boolean USER_AGENT_DETECTION_ENABLED = true;
+    public static final int USER_AGENT_CACHE_SIZE = 200;
+    public static final int USER_AGENT_CACHE_EXPIRATION_TIME = 3;
 
     @Test
-    public void testGetInstance(){
-        UserAgentConfigurationFactory factory =
+    public void testGetInstance() {
+        final UserAgentConfigurationFactory factory =
                 UserAgentConfigurationFactory.getInstance();
         assertNotNull(factory);
     }
-    
+
     @Test
-    public void testConfigure() throws ConfigurationException{
-        UserAgentConfigurationFactory factory = UserAgentConfigurationFactory.
+    public void testConfigure() throws ConfigurationException {
+        final UserAgentConfigurationFactory factory = UserAgentConfigurationFactory.
                 getInstance();
-        
-        //test configuration with properties
-        Properties props = buildProperties();
-        
+
+        // test configuration with properties
+        final Properties props = buildProperties();
+
         factory.reset();
-        UserAgentConfiguration cfg1 = factory.configure(props);
+        final UserAgentConfiguration cfg1 = factory.configure(props);
         assertNotNull(cfg1);
-        
-        //test default configuration
-        UserAgentConfiguration cfg2 = factory.configure();
+
+        // test default configuration
+        final UserAgentConfiguration cfg2 = factory.configure();
         assertNotNull(cfg2);
-        
+
         assertSame(cfg1, cfg2);
-        
+
         UserAgentDetector.getInstance().close();
     }
-    
+
     @Test
-    public void testReset() throws ConfigurationException{
-        UserAgentConfigurationFactory factory =
+    public void testReset() throws ConfigurationException {
+        final UserAgentConfigurationFactory factory =
                 UserAgentConfigurationFactory.getInstance();
-        
-        Properties props = buildProperties();
-        
-        UserAgentConfiguration cfg1 = factory.configure(props);
-        UserAgentConfiguration cfg2 = factory.configure();
-        
+
+        final Properties props = buildProperties();
+
+        final UserAgentConfiguration cfg1 = factory.configure(props);
+        final UserAgentConfiguration cfg2 = factory.configure();
+
         assertSame(cfg1, cfg2);
-        
-        //test reset
+
+        // test reset
         factory.reset();
-        UserAgentConfiguration cfg3 = factory.configure(props);
+        final UserAgentConfiguration cfg3 = factory.configure(props);
         assertNotSame(cfg3, cfg1);
-        
+
         UserAgentDetector.getInstance().close();
     }
-    
+
     @Test
-    public void testReconfigure() throws ConfigurationException{
-        UserAgentConfigurationFactory factory =
+    public void testReconfigure() throws ConfigurationException {
+        final UserAgentConfigurationFactory factory =
                 UserAgentConfigurationFactory.getInstance();
-        
-        Properties props = buildProperties();
-        
-        UserAgentConfiguration cfg1 = factory.configure(props);
-        UserAgentConfiguration cfg2 = factory.reconfigure();
-        
+
+        final Properties props = buildProperties();
+
+        final UserAgentConfiguration cfg1 = factory.configure(props);
+        final UserAgentConfiguration cfg2 = factory.reconfigure();
+
         assertNotSame(cfg1, cfg2);
-        
-        UserAgentConfiguration cfg3 = factory.reconfigure(props);
-        
+
+        final UserAgentConfiguration cfg3 = factory.reconfigure(props);
+
         assertNotSame(cfg2, cfg3);
-        
+
         UserAgentDetector.getInstance().close();
     }
-    
+
     @Test
-    public void testGetConfiguration() throws ConfigurationException{
-        UserAgentConfigurationFactory factory =
+    public void testGetConfiguration() throws ConfigurationException {
+        final UserAgentConfigurationFactory factory =
                 UserAgentConfigurationFactory.getInstance();
 
         factory.reset();
-        
+
         assertNull(factory.getConfiguration());
-        
-        Properties props = buildProperties();
-        
-        UserAgentConfiguration cfg1 = factory.configure(props);
-        UserAgentConfiguration cfg2 = factory.getConfiguration();
-        
+
+        final Properties props = buildProperties();
+
+        final UserAgentConfiguration cfg1 = factory.configure(props);
+        final UserAgentConfiguration cfg2 = factory.getConfiguration();
+
         assertNotNull(cfg2);
         assertSame(cfg1, cfg2);
-        
-        UserAgentDetector.getInstance().close();        
+
+        UserAgentDetector.getInstance().close();
     }
-    
-    public Properties buildProperties(){
-        Properties properties = new Properties();
+
+    public Properties buildProperties() {
+        final Properties properties = new Properties();
         properties.setProperty(UserAgentConfigurationFactory.
                 USER_AGENT_DETECTION_ENABLED_PROPERTY, Boolean.toString(
                 USER_AGENT_DETECTION_ENABLED));
@@ -139,7 +123,7 @@ public class UserAgentConfigurationFactoryTest {
                 USER_AGENT_CACHE_SIZE_PROPERTY, Integer.toString(
                 USER_AGENT_CACHE_SIZE));
         properties.setProperty(UserAgentConfigurationFactory.
-                USER_AGENT_CACHE_EXPIRATION_TIME_HOURS_PROPERTY, 
+                        USER_AGENT_CACHE_EXPIRATION_TIME_HOURS_PROPERTY,
                 Integer.toString(USER_AGENT_CACHE_EXPIRATION_TIME));
         return properties;
     }
