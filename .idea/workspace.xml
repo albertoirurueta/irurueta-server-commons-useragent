@@ -5,26 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="877801e1-7b56-472d-ae26-dd80a0ecd6c1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_irurueta_irurueta_server_commons_1_0_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_irurueta_irurueta_server_commons_1_0_SNAPSHOT.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/BuildInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/BuildInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/DeviceCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/DeviceCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/OperatingSystemFamily.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/OperatingSystemFamily.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentConfigurationFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentConfigurationFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentConfigurationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentConfigurationImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentDetectionDisabledException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentDetectionDisabledException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentDetector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irurueta/server/commons/useragent/UserAgentType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/irurueta/server/commons/useragent/BuildInfoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/irurueta/server/commons/useragent/BuildInfoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/irurueta/server/commons/useragent/UserAgentConfigurationFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/irurueta/server/commons/useragent/UserAgentConfigurationFactoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/irurueta/server/commons/useragent/UserAgentConfigurationImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/irurueta/server/commons/useragent/UserAgentConfigurationImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/irurueta/server/commons/useragent/UserAgentDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/irurueta/server/commons/useragent/UserAgentDataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/irurueta/server/commons/useragent/UserAgentDetectionDisabledExceptionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/irurueta/server/commons/useragent/UserAgentDetectionDisabledExceptionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/irurueta/server/commons/useragent/UserAgentDetectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/irurueta/server/commons/useragent/UserAgentDetectorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/irurueta/server/commons/useragent/UserAgentExceptionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/irurueta/server/commons/useragent/UserAgentExceptionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,34 +185,6 @@
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <module name="" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -280,6 +233,7 @@
       <workItem from="1616752860784" duration="62000" />
       <workItem from="1619605514169" duration="5476000" />
       <workItem from="1619614793215" duration="816000" />
+      <workItem from="1624062173208" duration="631000" />
     </task>
     <servers />
   </component>

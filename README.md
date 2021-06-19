@@ -1,7 +1,7 @@
 # irurueta-server-commons-useragent
 Utilities for user-agent processing
 
-[![Build Status](https://travis-ci.org/albertoirurueta/irurueta-server-commons-useragent.svg?branch=master)](https://travis-ci.org/albertoirurueta/irurueta-server-commons-useragent)
+[![Build Status](https://travis-ci.com/albertoirurueta/irurueta-server-commons-useragent.svg?branch=master)](https://travis-ci.com/albertoirurueta/irurueta-server-commons-useragent)
 
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=albertoirurueta_irurueta-server-commons-useragent&metric=bugs)](https://sonarcloud.io/dashboard?id=albertoirurueta_irurueta-server-commons-useragent)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=albertoirurueta_irurueta-server-commons-useragent&metric=code_smells)](https://sonarcloud.io/dashboard?id=albertoirurueta_irurueta-server-commons-useragent)
